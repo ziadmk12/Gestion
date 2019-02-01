@@ -1,4 +1,5 @@
 <?php
+echo ' ca marche ??';
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
    
 
