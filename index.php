@@ -8,7 +8,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
    
 
-    if($pass === 'bana'){
+    if($pass === 'ban'){
 
         header('location:public/admin');
 
