@@ -1,28 +1,4 @@
-<?php
-echo ' ca marche ??';
-if($_SERVER['REQUEST_METHOD'] === 'POST'){
-   
 
-    $login=$_POST['email'];
-    $pass=$_POST['pass'];
-
-
-   
-
-    if($pass === 'banaa'){
-
-        header('location:public/admin');
-
-    }else{
-        header('location:index.php?error=1');
-    }
-
-
-}
-
-
-
-?>
 
 <!DOCTYPE html>
 <html>
@@ -81,13 +57,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
       </div>
     </form>
     <div class="alert">
-    <?php 
-    
-    if(isset($_GET['error'])){
-        echo  'error';
-    }
-    
-    ?>
+   
     </div>
 
        
