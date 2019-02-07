@@ -7,9 +7,8 @@ class fournisseur {
     private $datAddFourni;
     private $mobile;
 
-    public function __construct($Forni_id,$Nom,$Prenom,$Cih,$DatAddFourni,$Mobile)
+    public function __construct($Nom,$Prenom,$Cih,$DatAddFourni,$Mobile)
 {
-    $this->forni_id=$Forni_id;
     $this->nom=$Nom;
     $this->prenom=$Prenom;
     $this->cin=$Cih;

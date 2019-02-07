@@ -13,9 +13,9 @@ private $DateAddArt;
 private $forni_id;
 private $id_cat;
 
-public function __construct($article_ID,$article_Name,$codeArticle,$reference,$stock,$unite,$Reserve,$seuil,$dateAddArt,$Forni_id,$Id_cat)
+public function __construct($article_Name,$codeArticle,$reference,$stock,$unite,$Reserve,$seuil,$dateAddArt,$Forni_id,$Id_cat)
 {
-    $this->rticle_ID=$article_ID;
+    
     $this->Article_Name=$article_Name;
     $this->CodeArticle=$codeArticle;
     $this->Reference=$reference;
@@ -116,6 +116,7 @@ public function setid_cat($Id_cat)
 {
     $this->id_cat=$Id_cat;
 }
-
 }
+
+
 ?>

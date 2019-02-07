@@ -4,7 +4,7 @@ class Personne {
     
     private $id;
     private $matricule;
-    private $nom;
+    private $nom="cc";
     private $prenom;
     private $dateNaissance;
     private $adress;
@@ -98,3 +98,4 @@ class Personne {
     
     
 }
+)

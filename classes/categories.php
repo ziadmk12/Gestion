@@ -5,9 +5,8 @@ class categories{
     private $descrip;
     private $date_add;
 
-    public function __construct($Cat_id,$Cat_name,$Descrip,$Date_add)
+    public function __construct($Cat_name,$Descrip,$Date_add)
 {
-    $this->cat_id=$Cat_id;
     $this->cat_name=$Cat_name;
     $this->descrip=$Descrip;
     $this->date_add=$Date_add;
@@ -49,4 +48,6 @@ public function setdate_add($Date_add)
     $this->date_add=$Date_add;
 }
 }
+
+
 ?>
