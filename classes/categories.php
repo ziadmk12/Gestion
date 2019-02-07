@@ -19,7 +19,7 @@ public function getcat_id()
 }
 public function setcat_id($Cat_id)
 {
-    $this->Articlcat_ide_ID=$Cat_id;
+    $this->cat_id=$Cat_id;
 }
 ////////////////////
 public function getcat_name()
