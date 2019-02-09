@@ -1,4 +1,6 @@
-
+<?php 
+include_once 'racine.php';
+?>
 
 <!DOCTYPE html>
 <html>
@@ -59,6 +61,13 @@
     <div class="alert">
    
     </div>
+
+
+    <?php 
+ 
+   
+    
+    ?>
 
        
 

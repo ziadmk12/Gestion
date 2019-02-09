@@ -3,7 +3,7 @@
 
 class article{
 
-Private $article_ID;
+private $article_ID;
 private $article_Name;
 private $codeArticle;
 private $reference;
