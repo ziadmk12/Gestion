@@ -1,10 +1,11 @@
 <?php
 
+
 class Personne {
     
     private $id;
     private $matricule;
-    private $nom="cc";
+    private $nom;
     private $prenom;
     private $dateNaissance;
     private $adress;
@@ -21,12 +22,13 @@ class Personne {
         $this->email = $email;
         $this->tel = $tel;
         $this->image = $image;
+        
     }
     
     function getId() {
         return $this->id;
     }
-
+   
     function getMatricule() {
         return $this->matricule;
     }
@@ -58,6 +60,9 @@ class Personne {
     function setId($id) {
         $this->id = $id;
     }
+
+   
+    
 
     function setMatricule($matricule) {
         $this->matricule = $matricule;
@@ -98,4 +103,3 @@ class Personne {
     
     
 }
-)
