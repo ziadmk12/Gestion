@@ -9,14 +9,14 @@ if(isset($_POST['email'])){
    foreach ($check_Email as  $value) {
      
     if($value->login === $user && $value->pass===$pass){
-      echo 'ok';
+      header('location:admin/');
       exit;
     }else{
-      echo 'non';
-    }
-    
+      header('location:index.php?error=1');
+    } 
    }
 }
+
 ?>
 
 
@@ -80,9 +80,25 @@ if(isset($_POST['email'])){
         <!-- /.col -->
       </div>
     </form>
-    <div class="alert">
-   
-    </div>
+    <?php
+
+    if(isset($_GET['error'])){
+ ?>
+<div style="margin-top: 10px;" class="alert dark alert-danger alert-dismissible d-none role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+            Erreur : Mot de passe ou Email est Incorrecte
+        </div>
+ <?php
+    }
+
+    ?>
+
+
+
+
+    
        
   </div>
   <!-- /.login-box-body -->
