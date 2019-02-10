@@ -64,7 +64,13 @@ include_once 'racine.php';
 
 
     <?php 
- 
+  
+   $a=new CompteService();
+   $check_Email=$a->findAll();
+   $useremail= $_POST['email'];
+   foreach ($check_Email as  $value) {
+    echo   $value->id;
+   }
    
     
     ?>
