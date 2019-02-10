@@ -1,6 +1,28 @@
 <?php 
 include_once 'racine.php';
+if(isset($_POST['email'])){
+   $a=new CompteService();
+   $check_Email=$a->findAll();
+   $user= $_POST['email'];
+   $pass= $_POST['pass'];
+  
+   foreach ($check_Email as  $value) {
+     
+    if($value->login === $user && $value->pass===$pass){
+      echo 'ok';
+      exit;
+    }else{
+      echo 'non';
+    }
+    
+   }
+}
 ?>
+
+
+
+
+   
 
 <!DOCTYPE html>
 <html>
@@ -61,22 +83,7 @@ include_once 'racine.php';
     <div class="alert">
    
     </div>
-
-
-    <?php 
-  
-   $a=new CompteService();
-   $check_Email=$a->findAll();
-   $useremail= $_POST['email'];
-   foreach ($check_Email as  $value) {
-    echo   $value->id;
-   }
-   
-    
-    ?>
-
        
-
   </div>
   <!-- /.login-box-body -->
 </div>
