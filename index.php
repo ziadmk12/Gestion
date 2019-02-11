@@ -94,11 +94,6 @@ if(isset($_POST['email'])){
     }
 
     ?>
-
-
-
-
-    
        
   </div>
   <!-- /.login-box-body -->
