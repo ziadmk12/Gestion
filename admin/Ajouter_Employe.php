@@ -31,7 +31,7 @@ include_once 'include/header.php';
               <div class="col-md-4">
               <div class="form-group">
                   <label for="exampleInputEmail1">Prenom</label>
-                  <input name="Prenom" id="Prenom" type="text" class="form-control" >
+                  <input name="Prenom" id="prenom" type="text" class="form-control" >
                 </div>
               </div>
               <div class="col-md-4">
@@ -91,7 +91,21 @@ include_once 'include/header.php';
       </div>
     </section>
     <!-- /.content -->
- 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    $('#ajouter').click(function(){ 
+      var Matricule=$('#matricule').val()
+      var Nom=$('#nom').val()
+      var Prenom=$('#prenom').val()
+      var DateNaissance=$('#dateN').val()
+      var Adresse=$('#adresse').val()
+      var Email=$('#email').val()
+      var Telephone=$('#tele').val()
+      var Grade=$('#grade').val()
+      alert(Matricule+Nom+Prenom+DateNaissance+Adresse+Email+Telephone+Grade)
+    });
+    
+    </script>
 
 
 
