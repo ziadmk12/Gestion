@@ -13,7 +13,7 @@ include_once 'include/header.php';
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form">
+            <form role="form" enctype="multipart/form-data" id="fupForm">
               <div class="box-body">
               <div class="row">
               <div class="col-md-4">
@@ -31,7 +31,7 @@ include_once 'include/header.php';
               <div class="col-md-4">
               <div class="form-group">
                   <label for="exampleInputEmail1">Prenom</label>
-                  <input name="Prenom" id="prenom" type="text" class="form-control" >
+                  <input name="prenom" id="prenom" type="text" class="form-control" >
                 </div>
               </div>
               <div class="col-md-4">
@@ -93,13 +93,16 @@ include_once 'include/header.php';
     <!-- /.content -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
-    $('#ajouter').click(function(){ 
+    $('#fupForm').on('submit',function(e){ 
+      e.preventDefault();
       $.ajax({
 
 url : 'http://localhost:8888/Gestion/admin/api/add_employe.php',
 type : 'POST',
-dataType : 'json',
-data : {},
+contentType: false,
+cache: false,
+processData:false,
+data : new FormData(this),
 success : function (data) {
 
 alert(data);    
