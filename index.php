@@ -1,15 +1,21 @@
 <?php 
+session_start();
 include_once 'racine.php';
+
+
 if(isset($_POST['email'])){
    $a=new CompteService();
    $check_Email=$a->findAll();
    $user= $_POST['email'];
    $pass= $_POST['pass'];
-  
+   
    foreach ($check_Email as  $value) {
-     
+    
+    
     if($value->login === $user && $value->pass===$pass){
-      header('location:admin/');
+      $_SESSION['email']=$user;
+      $_SESSION['pass']=$pass;
+        header('location:admin/');
       exit;
     }else{
       header('location:index.php?error=1');
