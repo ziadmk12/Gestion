@@ -15,6 +15,7 @@ if(isset($_POST['email'])){
     if($value->login === $user && $value->pass===$pass){
       $_SESSION['email']=$user;
       $_SESSION['pass']=$pass;
+      $_SESSION['idPersone']=$value->personne_id;
         header('location:admin/');
       exit;
     }else{
@@ -23,10 +24,7 @@ if(isset($_POST['email'])){
    }
 }
 
-
-
 ?>
-
 
 
 
