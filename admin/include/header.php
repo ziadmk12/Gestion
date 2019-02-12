@@ -90,17 +90,9 @@ if(isset($_SESSION['idPersone'])){
               <!-- User image -->
               <li class="user-header">
                 <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-
-                <p>
-                  Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
-                </p>
               </li>
               <!-- Menu Body -->
-              <li class="user-body">
-                
-                <!-- /.row -->
-              </li>
+              
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
@@ -143,8 +135,8 @@ if(isset($_SESSION['idPersone'])){
             </span>
           </a>
           <ul class="treeview-menu">     
-          <li><a href="pages/examples/blank.html"><i class="fa fa-circle-o"></i> Employee</a></li>       
-            <li><a href="pages/examples/blank.html"><i class="fa fa-circle-o"></i> Ajouter</a></li>
+          <li><a href="Employe.php"><i class="fa fa-circle-o"></i> Employee</a></li>       
+            <li><a href="Ajouter_Employe.php"><i class="fa fa-circle-o"></i> Ajouter</a></li>
             
            
           </ul>
