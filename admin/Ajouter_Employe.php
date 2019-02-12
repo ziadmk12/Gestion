@@ -94,15 +94,22 @@ include_once 'include/header.php';
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
     $('#ajouter').click(function(){ 
-      var Matricule=$('#matricule').val()
-      var Nom=$('#nom').val()
-      var Prenom=$('#prenom').val()
-      var DateNaissance=$('#dateN').val()
-      var Adresse=$('#adresse').val()
-      var Email=$('#email').val()
-      var Telephone=$('#tele').val()
-      var Grade=$('#grade').val()
-      alert(Matricule+Nom+Prenom+DateNaissance+Adresse+Email+Telephone+Grade)
+      $.ajax({
+
+url : 'http://localhost:8888/Gestion/admin/api/add_employe.php',
+type : 'POST',
+dataType : 'json',
+data : {},
+success : function (data) {
+
+alert(data);    
+
+},
+error : function(error){
+    console.log(error);
+}
+
+});
     });
     
     </script>
