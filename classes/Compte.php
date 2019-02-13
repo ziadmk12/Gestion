@@ -7,9 +7,9 @@ class Compte{
     private $motPass;
     private $personne_id;
     
-    function __construct($id,$login,$motPass,$personne_id){
+    function __construct($login,$motPass,$personne_id){
         
-        $this->id = $id;
+        
         $this->login = $login;
         $this->motPass = $motPass;
         $this->personne_id=$personne_id;
