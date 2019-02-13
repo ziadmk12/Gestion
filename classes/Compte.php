@@ -17,10 +17,10 @@ class Compte{
         $this->grade=$grade;
 
     }
-    function getgrade() {
+    function getGrade() {
         return $this->grade;
     }
-    function setgrade($grade) {
+    function setGrade($grade) {
         $this->grade = $grade;
     }
     

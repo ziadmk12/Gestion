@@ -54,6 +54,12 @@ include_once 'include/header.php';
               </div>
               <div class="col-md-4">
               <div class="form-group">
+                  <label for="exampleInputEmail1">Password</label>
+                  <input  name="pass" id="pass" type="password" class="form-control"  >
+                </div>
+              </div>
+              <div class="col-md-4">
+              <div class="form-group">
                   <label for="exampleInputEmail1">Telephone</label>
                   <input  name="tele" id="tele" type="text" class="form-control"  >
                 </div>

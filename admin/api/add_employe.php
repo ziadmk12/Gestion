@@ -17,11 +17,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $telefone=$_POST['tele'];
     $image=$_FILES['image']['name'];
     $grade=$_POST['grade'];
+    $pass=$_POST['pass'];
 
     $pers=new Personne($matricule,$nom, $prenom,$datenaissance,$adresse,$email,$telefone,$image);
-    
+    $comp=new Compte($email,$pass,1,$grade);
 
     header('Content-type: application/json');
 
-    echo json_encode($pers->getNom());
+    echo json_encode("treu");
 }
