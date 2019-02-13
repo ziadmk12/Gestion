@@ -5,6 +5,8 @@ include_once '../../classes/Personne.php';
 include_once '../../classes/Compte.php';
 
 
+
+
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
    
@@ -19,8 +21,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $grade=$_POST['grade'];
     $pass=$_POST['pass'];
 
-    $pers=new Personne($matricule,$nom, $prenom,$datenaissance,$adresse,$email,$telefone,$image);
+    $pers=new Personne($matricule,$nom,$prenom,$datenaissance,$adresse,$email,$telefone,$image);
     $comp=new Compte($email,$pass,1,$grade);
+    $sevPersone=new PersonneService();
+    $sevPersone->createPersone($pers);
 
     header('Content-type: application/json');
 
