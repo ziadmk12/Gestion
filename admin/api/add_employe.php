@@ -1,8 +1,7 @@
 <?php
 
-include_once '../../services/PersonneService.php';
-include_once '../../classes/Personne.php';
-include_once '../../classes/Compte.php';
+
+include_once '../../racine.php';
 
 
 
@@ -22,9 +21,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $pass=$_POST['pass'];
 
     $pers=new Personne($matricule,$nom,$prenom,$datenaissance,$adresse,$email,$telefone,$image);
-    $comp=new Compte($email,$pass,1,$grade);
     $sevPersone=new PersonneService();
-    $sevPersone->createPersone($pers);
+    $id=$sevPersone->createPersone($pers);
+
+    $comp=new Compte($email,$pass,$id,$grade);
 
     header('Content-type: application/json');
 

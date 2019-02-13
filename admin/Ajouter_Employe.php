@@ -19,55 +19,55 @@ include_once 'include/header.php';
               <div class="col-md-4">
               <div class="form-group">
                   <label for="exampleInputEmail1">Matricule</label>
-                  <input  name="matricule" id="matricule" type="text" class="form-control"  >
+                  <input required  name="matricule" id="matricule" type="text" class="form-control"  >
                 </div>
               </div>
               <div class="col-md-4">
               <div class="form-group">
                   <label for="exampleInputEmail1">Nom</label>
-                  <input  name="nom" id="nom" type="text" class="form-control" >
+                  <input required name="nom" id="nom" type="text" class="form-control" >
                 </div>
               </div>
               <div class="col-md-4">
               <div class="form-group">
                   <label for="exampleInputEmail1">Prenom</label>
-                  <input  name="prenom" id="prenom" type="text" class="form-control" >
+                  <input required name="prenom" id="prenom" type="text" class="form-control" >
                 </div>
               </div>
               <div class="col-md-4">
               <div class="form-group">
                   <label for="exampleInputEmail1">Date Naissance</label>
-                  <input  name="dateN" id="dateN" type="date" class="form-control"  >
+                  <input required name="dateN" id="dateN" type="date" class="form-control"  >
                 </div>
               </div>
               <div class="col-md-4">
               <div class="form-group">
                   <label for="exampleInputEmail1">Adresse</label>
-                  <input  name="adresse" id="adresse" type="text" class="form-control"  >
+                  <input required name="adresse" id="adresse" type="text" class="form-control"  >
                 </div>
               </div>
               <div class="col-md-4">
               <div class="form-group">
                   <label for="exampleInputEmail1">Email</label>
-                  <input  name="email" id="email" type="email" class="form-control"  >
+                  <input required name="email" id="email" type="email" class="form-control"  >
                 </div>
               </div>
               <div class="col-md-4">
               <div class="form-group">
                   <label for="exampleInputEmail1">Password</label>
-                  <input  name="pass" id="pass" type="password" class="form-control"  >
+                  <input required name="pass" id="pass" type="password" class="form-control"  >
                 </div>
               </div>
               <div class="col-md-4">
               <div class="form-group">
                   <label for="exampleInputEmail1">Telephone</label>
-                  <input  name="tele" id="tele" type="text" class="form-control"  >
+                  <input required name="tele" id="tele" type="text" class="form-control"  >
                 </div>
               </div>
               <div class="col-md-4">
               <div class="form-group">
                   <label for="exampleInputEmail1">Image</label>
-                  <input  name="image" id="image" type="file" class="form-control"  >
+                  <input required name="image" id="image" type="file" class="form-control"  >
                 </div>
               </div>
               <div class="col-md-4">
@@ -104,7 +104,7 @@ include_once 'include/header.php';
       e.preventDefault();
       $.ajax({
 
-url : 'http://localhost:8080/Gestion/admin/api/add_employe.php',
+url : 'http://localhost:8888/Gestion/admin/api/add_employe.php',
 type : 'POST',
 contentType: false,
 cache: false,
@@ -112,7 +112,7 @@ processData:false,
 data : new FormData(this),
 success : function (data) {
 
-alert(data);    
+console.log(data);    
 
 },
 error : function(error){
