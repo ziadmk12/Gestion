@@ -37,6 +37,14 @@ class CompteService
             'grade' => $obj->getGrade(),
         ));
     }
+    public function coutEmploye() {
+
+        $sql = "SELECT * FROM personne INNER JOIN compte on personne.id=compte.personne_id WHERE compte.grade='employee'";
+        $stmt = $this->conn->getConn()->prepare($sql);
+        $stmt->execute([]);
+
+        return $stmt->rowCount();
+    }
 
 
     
