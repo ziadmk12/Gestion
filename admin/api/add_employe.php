@@ -20,11 +20,22 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $grade=$_POST['grade'];
     $pass=$_POST['pass'];
 
+
+    $target_dir='../../images/';
+    if(!empty($_FILES['image'][tmp_name])){
+        move_uploaded_file($_FILES['image'][tmp_name],$target_dir.$image);
+    }
+
+
+
+
     $pers=new Personne($matricule,$nom,$prenom,$datenaissance,$adresse,$email,$telefone,$image);
     $sevPersone=new PersonneService();
     $id=$sevPersone->createPersone($pers);
 
     $comp=new Compte($email,$pass,$id,$grade);
+    $compteservice=new CompteService();
+    $compteservice->create($comp);
 
     header('Content-type: application/json');
 

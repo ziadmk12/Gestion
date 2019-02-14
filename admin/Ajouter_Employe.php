@@ -19,63 +19,61 @@ include_once 'include/header.php';
               <div class="col-md-4">
               <div class="form-group">
                   <label for="exampleInputEmail1">Matricule</label>
-                  <input required  name="matricule" id="matricule" type="text" class="form-control"  >
+                  <input   name="matricule" id="matricule" type="text" class="form-control"  >
                 </div>
               </div>
               <div class="col-md-4">
               <div class="form-group">
                   <label for="exampleInputEmail1">Nom</label>
-                  <input required name="nom" id="nom" type="text" class="form-control" >
+                  <input  name="nom" id="nom" type="text" class="form-control" >
                 </div>
               </div>
               <div class="col-md-4">
               <div class="form-group">
                   <label for="exampleInputEmail1">Prenom</label>
-                  <input required name="prenom" id="prenom" type="text" class="form-control" >
+                  <input  name="prenom" id="prenom" type="text" class="form-control" >
                 </div>
               </div>
               <div class="col-md-4">
               <div class="form-group">
                   <label for="exampleInputEmail1">Date Naissance</label>
-                  <input required name="dateN" id="dateN" type="date" class="form-control"  >
+                  <input  name="dateN" id="dateN" type="date" class="form-control"  >
                 </div>
               </div>
               <div class="col-md-4">
               <div class="form-group">
                   <label for="exampleInputEmail1">Adresse</label>
-                  <input required name="adresse" id="adresse" type="text" class="form-control"  >
+                  <input  name="adresse" id="adresse" type="text" class="form-control"  >
                 </div>
               </div>
               <div class="col-md-4">
               <div class="form-group">
                   <label for="exampleInputEmail1">Email</label>
-                  <input required name="email" id="email" type="email" class="form-control"  >
+                  <input  name="email" id="email" type="email" class="form-control"  >
                 </div>
               </div>
               <div class="col-md-4">
               <div class="form-group">
                   <label for="exampleInputEmail1">Password</label>
-                  <input required name="pass" id="pass" type="password" class="form-control"  >
+                  <input  name="pass" id="pass" type="password" class="form-control"  >
                 </div>
               </div>
               <div class="col-md-4">
               <div class="form-group">
                   <label for="exampleInputEmail1">Telephone</label>
-                  <input required name="tele" id="tele" type="text" class="form-control"  >
+                  <input  name="tele" id="tele" type="text" class="form-control"  >
                 </div>
               </div>
               <div class="col-md-4">
               <div class="form-group">
                   <label for="exampleInputEmail1">Image</label>
-                  <input required name="image" id="image" type="file" class="form-control"  >
+                  <input  name="image" id="image" type="file" class="form-control"  >
                 </div>
               </div>
               <div class="col-md-4">
               <div class="form-group">
                   <label for="exampleInputEmail1">Grade</label>
                   <select  class="form-control" name="grade" id="grade">
-                  <option hidden>.....</option>
-                  <option>admin</option>
                   <option>employee</option>
                   </select>
                 </div>
