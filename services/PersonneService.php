@@ -16,6 +16,20 @@ class PersonneService
         $stmt->execute(['id'=>$idPers]);
         return $stmt->fetch();
     }
+    public function delete($id){
+        $sql = "DELETE FROM `personne` WHERE `personne`.`id` = :id";
+        $stmt = $this->conn->getConn()->prepare($sql);
+        $stmt->execute(['id'=>$id]);
+    }
+    public function findById($id) {
+
+        $sql = "SELECT * FROM personne WHERE id = :id";
+        $stmt = $this->conn->getConn()->prepare($sql);
+        $stmt->execute(array('id' => $id));
+
+        return $stmt->fetch();
+
+    }
     public function createPersone($obj) {
 
         $sql = "INSERT INTO personne(matricule,nom,prenom,dateNaissance,adress,email,tel,image) VALUES(:matricule,:nom,:prenom,:dateNaissance,:adress,:email,:tel,:image)";

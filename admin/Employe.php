@@ -36,13 +36,15 @@ $com=$compteservice->findEmploye();
                   <th>adress</th>
                   <th>Telephone</th>
                   <th>email</th>
+                  <th></th>
+                  <th></th>
                   
 
                   
                   
                 </tr>
                 </thead>
-                <tbody>
+                <tbody id="tbody">
                 <?php
                 foreach ($com as $value) {
                    ?>
@@ -56,6 +58,8 @@ $com=$compteservice->findEmploye();
                   <td style="line-height: 3;"><?php echo $value->adress; ?></td>
                   <td style="line-height: 3;"><?php echo $value->tel; ?></td>
                   <td style="line-height: 3;"><?php echo $value->email; ?></td>
+                  <td  data-id="<?php echo $value->id ; ?>"><button class="btn btn-danger">Supprimer</button></td>
+                  <td><button class="btn btn-success"><a style="color: #ecf0f6;" href="update_employe.php?id=<?php echo $value->id ; ?>">Modifier</a></button></td>
                   
                   
                   
@@ -79,5 +83,6 @@ $com=$compteservice->findEmploye();
       </div>
       <!-- /.row -->
     </section>
+    
     <!-- /.content -->
   <?php include_once 'include/footer.php'; ?>

@@ -102,7 +102,7 @@ include_once 'include/header.php';
       e.preventDefault();
       $.ajax({
 
-url : 'http://localhost:8080/Gestion/admin/api/add_employe.php',
+url : 'http://localhost:8888/Gestion/admin/api/add_employe.php',
 type : 'POST',
 contentType: false,
 cache: false,

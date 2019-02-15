@@ -18,6 +18,7 @@
 <!-- ./wrapper -->
 
 <!-- jQuery 3 -->
+
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
@@ -59,9 +60,46 @@
 <script src="bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 <script>
   $(function () {
-    $('#example1').DataTable()
+    $('#example1').DataTable({})
     
   })
+</script>
+<script>
+    $(document).ready(function(){
+
+        
+      var selectedRow;
+
+$('#tbody').on('click',function(event){
+    
+  selectedRow = $(event.target.parentNode);
+  idRow = selectedRow.data('id');
+  if(idRow){
+
+    $.ajax({
+
+url : 'http://localhost:8888/Gestion/admin/api/delete_employe.php',
+type : 'POST',
+data : {'id':idRow},
+success : function (data) {
+
+  selectedRow.parent().fadeOut();   
+
+},
+error : function(error){
+    console.log(error);
+}
+
+});
+  }
+  
+
+    
+    
+
+});
+
+    });
 </script>
 </body>
 </html>
