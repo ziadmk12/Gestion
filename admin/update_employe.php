@@ -117,7 +117,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       e.preventDefault();
       $.ajax({
 
-url : 'http://localhost:8888/Gestion/admin/api/update_employe.php',
+url : 'http://localhost:8080/Gestion/admin/api/update_employe.php',
 type : 'POST',
 contentType: false,
 cache: false,

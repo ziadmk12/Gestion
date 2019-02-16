@@ -39,6 +39,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $person->setId($id);
     $persoserve=new PersonneService();
     $persoserve->updatePersonne($person);
+    
 
 
    

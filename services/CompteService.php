@@ -56,6 +56,24 @@ class CompteService
         return $stmt->rowCount();
     }
 
+    public function updateCompte($obj) {
+
+        $sql = "update compte
+        SET login=:login,pass=:pass,grade=:grade WHERE id=:id";
+        $stmt = $this->conn->getConn()->prepare($sql);
+        $stmt->execute(array(
+
+            'login' => $obj->getLogin(),
+            'pass' => $obj->getMotPass(),
+            'grade' => $obj->getGrade(),
+            'id'=>$obj->getId()
+        
+        ));
+
+        
+
+    }
+
 
     
 }
