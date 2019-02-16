@@ -95,7 +95,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
               </div>
               </div>
               <div class="box-footer">
-                <button type="submit" id="ajouter" class="btn btn-primary">Ajouter</button>
+                <button type="submit" id="ajouter" class="btn btn-primary">Modifier</button>
               </div>
                 
              
