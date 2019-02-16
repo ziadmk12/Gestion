@@ -49,6 +49,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     header('Content-type: application/json');
 
 
+<<<<<<< HEAD
     echo json_encode("banahoks");
+=======
+    echo json_encode("bana");
+>>>>>>> d43c0b56e445bf55585ed78aebf7a43c7cc6c260
 
 }
