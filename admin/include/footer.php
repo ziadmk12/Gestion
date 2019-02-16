@@ -55,6 +55,7 @@
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+<script src="dist/js/swal.js"></script>
 <!-- DataTables -->
 <script src="bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
@@ -66,7 +67,7 @@
 </script>
 <script>
     $(document).ready(function(){
-
+      
         
       var selectedRow;
 
@@ -76,6 +77,14 @@ $('#tbody').on('click',function(event){
   idRow = selectedRow.data('id');
   if(idRow){
 
+    swal({
+  title: "voulez-vous vraiment Supprimer cette employé ?",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+.then((willDelete) => {
+  if (willDelete) {
     $.ajax({
 
 url : 'http://localhost:8888/Gestion/admin/api/delete_employe.php',
@@ -83,7 +92,8 @@ type : 'POST',
 data : {'id':idRow},
 success : function (data) {
 
-  selectedRow.parent().fadeOut();   
+  selectedRow.parent().fadeOut(); 
+  swal("Employé a été supprimé avec succès",'', "success");  
 
 },
 error : function(error){
@@ -91,6 +101,12 @@ error : function(error){
 }
 
 });
+  } else {
+    swal("Your imaginary file is safe!");
+  }
+});
+
+    
   }
   
 

@@ -103,7 +103,7 @@ $persone=$sevPersone->findById($_SESSION['idPersone']);
                   <div class="form-group col-sm-6">
                     <label for="dateNaissance" >Date Naissance</label>
                     <div >
-                      <input type="date" class="form-control" id="dateNaissance" name="dateNaissance" value="">
+                      <input  type="date" class="form-control" id="dateNaissance" name="dateNaissance" value="">
                     </div>
                   </div>
                   <div class="form-group col-sm-6">

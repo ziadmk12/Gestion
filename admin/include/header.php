@@ -1,3 +1,4 @@
+
 <?php 
 session_start();
 include_once '../racine.php';
@@ -8,6 +9,7 @@ if(isset($_SESSION['idPersone'])){
 {
  header('location:../index.php');
 }
+
 
    
     

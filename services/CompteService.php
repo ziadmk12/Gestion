@@ -24,6 +24,16 @@ class CompteService
 
         return $stmt->fetchAll();
     }
+    public function findById($id) {
+
+        $sql = "SELECT * FROM compte
+        INNER JOIN personne ON personne.id=compte.personne_id
+        WHERE personne.id=:id";
+        $stmt = $this->conn->getConn()->prepare($sql);
+        $stmt->execute(['id'=>$id]);
+
+        return $stmt->fetch();
+    }
 
     public function create($obj) {
 
