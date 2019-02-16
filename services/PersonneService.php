@@ -50,6 +50,30 @@ class PersonneService
         return $this->conn->getConn()->lastInsertId();
 
     }
+    
+    public function updatePersonne($obj) {
+
+        $sql = "update personne
+        SET matricule=:matricule,nom=:nom,prenom=:prenom,dateNaissance=:dateNaissance,adress=:adress,email=:email,tel=:tel,image=:image WHERE id=:id";
+        $stmt = $this->conn->getConn()->prepare($sql);
+        $stmt->execute(array(
+
+            'matricule' => $obj->getMatricule(),
+            'nom' => $obj->getNom(),
+            'prenom' => $obj->getPrenom(),
+            'dateNaissance' => $obj->getDateNaissance(),
+            'adress' => $obj->getAdress(),
+            'email' => $obj->getEmail(),
+            'tel' => $obj->getTel(),
+            'image' => $obj->getImage(),
+            'id' => $obj->getId()
+
+
+        ));
+
+        
+
+    }
 
 }
 

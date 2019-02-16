@@ -34,11 +34,26 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $pass=$_POST['pass'];
     }
 
+<<<<<<< HEAD
     $person=new Personne($matricule,$nom,$prenom,$datenaissance,$adresse,$email,$telefone,$image);
     $person->setId($id);
+=======
+
+    $personne= new Personne($matricule,$nom,$prenom,$datenaissance,$adresse,$email,$telefone,$image);
+
+    
+    
+
+    
+
+>>>>>>> 0274e582487c2a474e8a2ae4cf253b78cd9ecc5d
 
 
     header('Content-type: application/json');
 
+<<<<<<< HEAD
     echo json_encode($person->getId());
+=======
+    echo json_encode($personne->getNom());
+>>>>>>> 0274e582487c2a474e8a2ae4cf253b78cd9ecc5d
 }
