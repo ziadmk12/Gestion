@@ -79,6 +79,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                   <input  name="image" id="image" type="file" class="form-control"  >
                   <input  value="<?php echo $compte->image; ?>"  name="old_image" id="old_image" type="hidden" class="form-control"  >
                   <input  value="<?php echo $compte->id; ?>"  name="id" id="id" type="hidden" class="form-control"  >
+                  <input  value="<?php echo $compte->copmte_id; ?>"  name="id_c" id="id_c" type="hidden" class="form-control"  >
 
 
                 </div>
@@ -117,7 +118,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       e.preventDefault();
       $.ajax({
 
-url : 'http://localhost:8080/Gestion/admin/api/update_employe.php',
+url : 'http://localhost:8888/Gestion/admin/api/update_employe.php',
 type : 'POST',
 contentType: false,
 cache: false,
@@ -136,7 +137,7 @@ $('#dateN').val(false);
 $('#image').val('');
 */
 
-swal(data,'', "success");    
+swal("Employé a été Modifier avec succès",'', "success");    
 
 },
 error : function(error){

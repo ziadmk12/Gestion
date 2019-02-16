@@ -16,6 +16,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $adresse=$_POST['adresse'];
     $email=$_POST['email'];
     $telefone=$_POST['tele'];
+    $id_c=$_POST['id_c'];
     $image=$_FILES['image']['name'];
     if(empty($_FILES['image']['name'])){
         $image=$_POST['old_image'];
@@ -40,6 +41,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $persoserve=new PersonneService();
     $persoserve->updatePersonne($person);
     $compte=new Compte($email,$pass,null,$grade);
+    $compte->setId($id_c);
+    $comservice=new CompteService();
+    $comservice->updateCompte($compte);
     
 
 
@@ -49,10 +53,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     header('Content-type: application/json');
 
 
-<<<<<<< HEAD
-    echo json_encode("banahoks");
-=======
-    echo json_encode("bana");
->>>>>>> d43c0b56e445bf55585ed78aebf7a43c7cc6c260
+    echo json_encode("");
 
 }

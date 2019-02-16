@@ -26,8 +26,7 @@ class CompteService
     }
     public function findById($id) {
 
-        $sql = "SELECT * FROM compte
-        INNER JOIN personne ON personne.id=compte.personne_id
+        $sql = "SELECT personne.*,compte.id as 'copmte_id',compte.login,compte.pass,compte.grade FROM compte INNER JOIN personne ON personne.id=compte.personne_id
         WHERE personne.id=:id";
         $stmt = $this->conn->getConn()->prepare($sql);
         $stmt->execute(['id'=>$id]);
