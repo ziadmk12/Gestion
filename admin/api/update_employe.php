@@ -34,11 +34,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $pass=$_POST['pass'];
     }
 
-    
-
+    $person=new Personne($matricule,$nom,$prenom,$datenaissance,$adresse,$email,$telefone,$image);
+    $person->setId($id);
 
 
     header('Content-type: application/json');
 
-    echo json_encode($image);
+    echo json_encode($person->getId());
 }
