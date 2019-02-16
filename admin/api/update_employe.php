@@ -34,11 +34,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $pass=$_POST['pass'];
     }
 
+
+    $personne= new Personne($matricule,$nom,$prenom,$datenaissance,$adresse,$email,$telefone,$image);
+
+    
+    
+
     
 
 
 
     header('Content-type: application/json');
 
-    echo json_encode($image);
+    echo json_encode($personne->getNom());
 }
