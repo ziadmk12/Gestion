@@ -13,7 +13,7 @@ $conf= array
         'host'     => 'localhost', 
         'database' => 'gestion_stock',
         'login'    => 'root',
-        'password' => ''
+        'password' => 'root'
       );
       try {
           $this->conn=new PDO('mysql:host='.$conf['host'].';dbname='.$conf['database'].';',$conf['login'],
