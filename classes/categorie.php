@@ -3,7 +3,7 @@
 
 class {
 
-private $id_cat;
+private $id_cat ;
 private $name_cat;
 
 public function __construct($id_cat,$name_cat)
