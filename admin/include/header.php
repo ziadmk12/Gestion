@@ -163,7 +163,28 @@ if(isset($_SESSION['idPersone'])){
         </li>
         
         
+        
       </ul>
+      <ul class="sidebar-menu" data-widget="tree">        
+       
+       <li class="treeview">
+         <a href="#">
+           <i class="fa fa-user"></i> <span>Gestion Article</span>
+           <span class="pull-right-container">
+             <i class="fa fa-angle-left pull-right"></i>
+           </span>
+         </a>
+         <ul class="treeview-menu">     
+         <li><a href="article.php"><i class="fa fa-circle-o"></i> Article</a></li>       
+           <li><a href="Ajouter_article.php"><i class="fa fa-circle-o"></i> Ajouter Article</a></li>
+           
+          
+         </ul>
+       </li>
+       
+       
+       
+     </ul>
     </section>
     <!-- /.sidebar -->
   </aside>

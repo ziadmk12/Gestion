@@ -61,7 +61,7 @@
       e.preventDefault();
       $.ajax({
 
-url : 'http://localhost:8080/Gestion/admin/api/add_categories.php',
+url : 'http://localhost/Gestion/admin/api/add_categories.php',
 type : 'POST',
 contentType: false,
 cache: false,

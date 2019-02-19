@@ -71,7 +71,7 @@ if(isset($_GET['id'])){
       e.preventDefault();
       $.ajax({
 
-url : 'http://localhost:8080/Gestion/admin/api/update_categories.php',
+url : 'http://localhost/Gestion/admin/api/update_categories.php',
 type : 'POST',
 contentType: false,
 cache: false,
