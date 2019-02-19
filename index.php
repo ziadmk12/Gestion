@@ -12,13 +12,20 @@ if(isset($_POST['email'])){
    foreach ($check_Email as  $value) {
     
     
-    if($value->login === $user && $value->pass===$pass){
+    if($value->login === $user && $value->pass===$pass && $value->grade==="admin"){
       $_SESSION['email']=$user;
       $_SESSION['pass']=$pass;
       $_SESSION['idPersone']=$value->personne_id;
         header('location:admin/');
       exit;
-    }else{
+    }elseif($value->login === $user && $value->pass===$pass && $value->grade==="employee"){
+      $_SESSION['email']=$user;
+      $_SESSION['pass']=$pass;
+      $_SESSION['idPersone']=$value->personne_id;
+        header('location:employe/');
+      exit;
+    }
+    else{
       header('location:index.php?error=1');
     } 
    }
