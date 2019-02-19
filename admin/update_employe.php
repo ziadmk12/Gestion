@@ -4,9 +4,9 @@ if(isset($_GET['id'])){
     $com=new CompteService();
     $compte=$com->findById($_GET['id']);
 }
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
     
-}
+    }
 ?>
 
 <section class="content">
@@ -16,7 +16,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
           <!-- general form elements -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Ajouter Employee</h3>
+              <h3 class="box-title">Modifier Employee</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
@@ -96,7 +96,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
               </div>
               </div>
               <div class="box-footer">
-                <button type="submit" id="ajouter" class="btn btn-primary">Modifier</button>
+                <button type="submit" id="modifier" class="btn btn-primary">Modifier</button>
               </div>
                 
              
@@ -118,7 +118,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       e.preventDefault();
       $.ajax({
 
-url : 'http://localhost:8888/Gestion/admin/api/update_employe.php',
+url : 'http://localhost:8080/Gestion/admin/api/update_employe.php',
 type : 'POST',
 contentType: false,
 cache: false,

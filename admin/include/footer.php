@@ -87,7 +87,7 @@ $('#tbody').on('click',function(event){
   if (willDelete) {
     $.ajax({
 
-url : 'http://localhost:8888/Gestion/admin/api/delete_employe.php',
+url : 'http://localhost:8080/Gestion/admin/api/delete_employe.php',
 type : 'POST',
 data : {'id':idRow},
 success : function (data) {

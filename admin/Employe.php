@@ -40,8 +40,6 @@ $com=$compteservice->findEmploye();
                   <th></th>
                   
 
-                  
-                  
                 </tr>
                 </thead>
                 <tbody id="tbody">

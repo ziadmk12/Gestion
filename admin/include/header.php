@@ -84,7 +84,7 @@ if(isset($_SESSION['idPersone'])){
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="../images/<?php echo $personne->image; ?>" class="user-image" alt="User Image">
-              <span class="hidden-xs"><?php  echo $personne->nom.' '.$personne->prenom   ?> </span>
+              <span class="hidden-xs"><?php echo $personne->nom.' '.$personne->prenom ?> </span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -96,7 +96,7 @@ if(isset($_SESSION['idPersone'])){
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="Profile.php" class="btn btn-default btn-flat">Profile</a>
+                  <a href="Profile.php?id=<?php echo $personne->id ?>" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
                   <a href="logout.php" class="btn btn-default btn-flat">Sign out</a>
@@ -137,6 +137,26 @@ if(isset($_SESSION['idPersone'])){
           <ul class="treeview-menu">     
           <li><a href="Employe.php"><i class="fa fa-circle-o"></i> Employee</a></li>       
             <li><a href="Ajouter_Employe.php"><i class="fa fa-circle-o"></i> Ajouter</a></li>
+            
+           
+          </ul>
+        </li>
+        
+        
+      </ul>
+
+      <ul class="sidebar-menu" data-widget="tree">        
+       
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-user"></i> <span>Gestion categories</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">     
+          <li><a href="categories.php"><i class="fa fa-circle-o"></i> categories</a></li>       
+            <li><a href="Ajouter_Categories.php"><i class="fa fa-circle-o"></i> Ajouter categories</a></li>
             
            
           </ul>

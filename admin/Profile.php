@@ -4,6 +4,7 @@
 $sevPersone=new PersonneService();
 $persone=$sevPersone->findById($_SESSION['idPersone']);
 
+
 ?>
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -81,7 +82,7 @@ $persone=$sevPersone->findById($_SESSION['idPersone']);
               <!-- /.tab-pane -->
 
               <div class="active tab-pane" id="activity">
-                <form class="row">
+                <form class="row" action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" role="form" enctype="multipart/form-data" id="fupForm" >
                 <div class="form-group col-sm-6">
                     <label for="matricule" >Matricule</label>
                     <div >
@@ -103,7 +104,7 @@ $persone=$sevPersone->findById($_SESSION['idPersone']);
                   <div class="form-group col-sm-6">
                     <label for="dateNaissance" >Date Naissance</label>
                     <div >
-                      <input  type="date" class="form-control" id="dateNaissance" name="dateNaissance" value="">
+                      <input  type="date" class="form-control" id="dateNaissance" name="dateNaissance" value="<?php echo $persone->dateNaissance  ?>">
                     </div>
                   </div>
                   <div class="form-group col-sm-6">
@@ -127,17 +128,14 @@ $persone=$sevPersone->findById($_SESSION['idPersone']);
                   <div class="form-group col-sm-6">
                     <label for="image" >Image</label>
                     <div >
-                      <input type="file" class="form-control" id="image" name="image" value="<?php echo $persone->tel; ?>">
+                      <input type="file" class="form-control" id="image" name="image" value="<?php echo $persone->image; ?>">
+                      <input  value="<?php echo $persone->image; ?>"  name="old_image" id="old_image" type="hidden" class="form-control" >
+                      <input  value="<?php echo $persone->id; ?>"  name="id" id="id" type="hidden" class="form-control"  >
                     </div>
                   </div>
-                  
-                
-                 
-                 
-                 
                   <div class="form-group col-sm-6">
                     <div>
-                      <button type="submit" class="btn btn-danger">Submit</button>
+                      <button type="submit" id="modifier" class="btn btn-danger">Submit</button>
                     </div>
                   </div>
                 </form>
@@ -154,4 +152,48 @@ $persone=$sevPersone->findById($_SESSION['idPersone']);
 
     </section>
     <!-- /.content -->
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+    <script>
+    $(document).ready(function(){
+
+      $('#fupForm').on('submit',function(e){ 
+      e.preventDefault();
+      $.ajax({
+
+url : 'http://localhost:8080/Gestion/admin/api/update_profile.php',
+type : 'POST',
+contentType: false,
+cache: false,
+processData:false,
+data : new FormData(this),
+success : function (data) {
+
+/*$('#nom').val('');
+$('#prenom').val(''); 
+$('#email').val('');
+$('#tele').val('');
+$('#pass').val('');
+$('#matricule').val('');
+$('#adress').val('');
+$('#dateN').val(false);
+$('#image').val('');
+*/
+
+swal("Profile a été Modifier avec succès",'', "success");    
+
+},
+error : function(error){
+    console.log(error);
+}
+
+});
+    });
+
+    });
+    
+    
+    </script>
+
     <?php include_once 'include/footer.php'; ?>
