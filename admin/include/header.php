@@ -153,6 +153,32 @@ if(isset($_SESSION['idPersone'])){
           </ul>
         </li>
         
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-search"></i> <span>Recherche</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">     
+          <li><a href="#"><i class="fa fa-circle-o"></i> x</a></li>       
+            <li><a href="#"><i class="fa fa-circle-o"></i> x</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-line-chart"></i> <span>Statistics</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">     
+          <li><a href="#"><i class="fa fa-circle-o"></i> x</a></li>       
+            <li><a href="#"><i class="fa fa-circle-o"></i> x</a></li>
+          </ul>
+        </li>
+        
+        
         
       </ul>
 
