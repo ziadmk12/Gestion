@@ -9,13 +9,14 @@ class CategoriesService
 
     public function createcategories($obj) {
 
-        $sql = "INSERT INTO categories (cat_name,descrip,date_add) VALUES (:cat_name,:descrip,:date_add)";
+        $sql = "INSERT INTO categories (cat_name,descrip,date_add,id_perso) VALUES (:cat_name,:descrip,:date_add,:id_perso)";
         $stmt = $this->conn->getConn()->prepare($sql);
         $stmt->execute(array(
 
             'cat_name' => $obj->getcat_name(),
             'descrip' => $obj->getdescrip(),
-            'date_add' => $obj->getdate_add()
+            'date_add' => $obj->getdate_add(),
+            'id_perso'=>$obj->getId_Pers()
             
         ));
        
@@ -31,7 +32,8 @@ class CategoriesService
 
     public function findAllCat() {
 
-        $sql = "SELECT * FROM categories";
+        $sql = "SELECT categories.*,personne.prenom,personne.nom FROM categories
+        inner JOIN personne ON personne.id=categories.id_perso";
         $stmt = $this->conn->getConn()->prepare($sql);
         $stmt->execute([]);
 
@@ -57,7 +59,7 @@ class CategoriesService
     }
     public function deleteCategories($idCat)
     {
-        $sql = "DELETE FROM categories WHERE cat_id=:cat_id";
+        $sql = "DELETE FROM categories WHERE cat_id=:id";
         $stmt = $this->conn->getConn()->prepare($sql);
         $stmt->execute(['id'=>$idCat]);
     }

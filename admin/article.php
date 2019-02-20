@@ -6,10 +6,6 @@ $find=$catservice->findAllCat();
 
 ?>
 
-
-
-
-
   <!-- Content Header (Page header) -->
   <section class="content-header">
       <h1>
@@ -41,9 +37,8 @@ $find=$catservice->findAllCat();
                   <th>reserve</th>
                   <th>seuil</th>
                   <th>date add</th>
-                  <th>persone id</th>
-                  <th>fournisseur id</th>
-                  <th>categorie id</th>
+                  <th>fournisseur</th>
+                  <th>categorie</th>
                   <th></th>
                   <th></th>
 

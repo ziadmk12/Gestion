@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once '../../racine.php';
 
 
@@ -10,7 +11,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 
 
 
-    $cat=new categories($nom,$description,$dateAdd);
+    $cat=new categories($nom,$description,$dateAdd,$_SESSION["idPersone"]);
     $servicecat=new CategoriesService();
     $servicecat->createcategories($cat);
 

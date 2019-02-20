@@ -81,6 +81,68 @@ $com=$compteservice->findEmploye();
       </div>
       <!-- /.row -->
     </section>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script>
     
+  $(function () {
+    $('#example1').DataTable({})
+    
+  })
+</script>
+<script>
+    $(document).ready(function(){
+      
+      var selectedRow;
+
+$('#tbody').on('click',function(event){
+    
+  selectedRow = $(event.target.parentNode);
+  idRow = selectedRow.data('id');
+  
+  if(idRow){
+
+    swal({
+  title: "voulez-vous vraiment Supprimer cette employé ?",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+.then((willDelete) => {
+  if (willDelete) {
+    $.ajax({
+
+
+url : 'http://localhost:8888/Gestion/admin/api/delete_employe.php',
+
+type : 'POST',
+data : {'id':idRow},
+success : function (data) {
+
+
+  selectedRow.parent().fadeOut(); 
+  swal("Employé a été supprimé avec succès",'', "success");  
+
+},
+error : function(error){
+    console.log(error);
+}
+
+});
+  } else {
+    
+  }
+});
+
+    
+  }
+  
+
+    
+    
+
+});
+
+    });
+</script>
     <!-- /.content -->
   <?php include_once 'include/footer.php'; ?>

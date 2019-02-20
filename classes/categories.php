@@ -4,12 +4,22 @@ class categories{
     private $cat_name;
     private $descrip;
     private $date_add;
+    private $id_pers;
 
-    public function __construct($Cat_name,$Descrip,$Date_add)
+    public function __construct($Cat_name,$Descrip,$Date_add,$id_pers)
 {
     $this->cat_name=$Cat_name;
     $this->descrip=$Descrip;
     $this->date_add=$Date_add;
+    $this->id_pers=$id_pers;
+}
+public function getId_Pers()
+{
+    return $this->id_pers;
+}
+public function setId_Pers($id_pers)
+{
+    $this->id_pers=$id_pers;
 }
 ////////////////////
 public function getcat_id()

@@ -59,67 +59,6 @@
 <!-- DataTables -->
 <script src="bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-<script>
-  $(function () {
-    $('#example1').DataTable({})
-    
-  })
-</script>
-<script>
-    $(document).ready(function(){
-      
-        
-      var selectedRow;
 
-$('#tbody').on('click',function(event){
-    
-  selectedRow = $(event.target.parentNode);
-  idRow = selectedRow.data('id');
-  if(idRow){
-
-    swal({
-  title: "voulez-vous vraiment Supprimer cette employé ?",
-  icon: "warning",
-  buttons: true,
-  dangerMode: true,
-})
-.then((willDelete) => {
-  if (willDelete) {
-    $.ajax({
-
-<<<<<<< HEAD
-url : 'http://localhost:8080/Gestion/admin/api/delete_employe.php',
-=======
-url : 'http://localhost/Gestion/admin/api/delete_employe.php',
->>>>>>> 47e8a5ab8f1618dd72af76f60c2cbc3a5ba35722
-type : 'POST',
-data : {'id':idRow},
-success : function (data) {
-
-  selectedRow.parent().fadeOut(); 
-  swal("Employé a été supprimé avec succès",'', "success");  
-
-},
-error : function(error){
-    console.log(error);
-}
-
-});
-  } else {
-    swal("Your imaginary file is safe!");
-  }
-});
-
-    
-  }
-  
-
-    
-    
-
-});
-
-    });
-</script>
 </body>
 </html>
