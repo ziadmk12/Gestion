@@ -1,6 +1,5 @@
 <?php
 
-
 include_once '../../racine.php';
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -38,6 +37,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     header('Content-type: application/json');
 
 
-    echo json_encode("");
+    echo json_encode("ok");
 
 }

@@ -47,7 +47,8 @@ $countCategorie=$servCategorie->coutCategorie();
           </div>
         </div>
       </div>
-  
+
+    
       <!-- /.row -->
     
     </section>

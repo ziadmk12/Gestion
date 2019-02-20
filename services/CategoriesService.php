@@ -39,17 +39,39 @@ class CategoriesService
 
         return $stmt->fetchAll();
     }
+    public function findAllCatper($id) {
+
+        $sql = "SELECT categories.*,personne.prenom,personne.nom FROM categories
+        inner JOIN personne ON personne.id=categories.id_perso where personne.id=:id ";
+        $stmt = $this->conn->getConn()->prepare($sql);
+        $stmt->execute(['id'=>$id]);
+
+        return $stmt->fetchAll();
+    }
+    public function findAllNameCat($id) {
+
+        $sql = "SELECT categories.cat_name from categories
+        WHERE categories.id_perso=:id";
+        $stmt = $this->conn->getConn()->prepare($sql);
+        $stmt->execute(['id'=>$id]);
+
+        return $stmt->fetchAll();
+    }
+
+
+
+    
+
 
     public function updateCategories($obj) {
 
         $sql = "update categories 
-        SET cat_name=:cat_name,descrip=:descrip,date_add=:date_add WHERE cat_id=:cat_id";
+        SET cat_name=:cat_name,descrip=:descrip WHERE cat_id=:cat_id";
         $stmt = $this->conn->getConn()->prepare($sql);
         $stmt->execute(array(
 
             'cat_name' => $obj->getcat_name(),
             'descrip' => $obj->getdescrip(),
-            'date_add' => $obj->getdate_add(),
             'cat_id' => $obj->getcat_id()
 
 
@@ -72,6 +94,16 @@ class CategoriesService
 
         return $stmt->rowCount();
     }
+    public function coutCategoriespers($id) {
+
+        $sql = "SELECT * FROM categories WHERE categories.id_perso=:id";
+        $stmt = $this->conn->getConn()->prepare($sql);
+        $stmt->execute(['id'=>$id]);
+
+        return $stmt->rowCount();
+    }
+
+
 
 
 

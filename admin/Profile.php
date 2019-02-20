@@ -33,40 +33,7 @@ $persone=$sevPersone->findById($_SESSION['idPersone']);
           <!-- /.box -->
 
           <!-- About Me Box -->
-          <div class="box box-primary">
-            <div class="box-header with-border">
-              <h3 class="box-title">Mon Realisation</h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              
-
-           
-
-              <strong><i class="fa fa-pencil margin-r-5"></i> Skills</strong>
-
-              <p>
-                <span class="label label-danger">UI Design</span>
-                <span class="label label-success">Coding</span>
-                <span class="label label-info">Javascript</span>
-                <span class="label label-warning">PHP</span>
-                <span class="label label-primary">Node.js</span>
-              </p>
-              <strong><i class="fa fa-pencil margin-r-5"></i> Skills</strong>
-
-              <p>
-                <span class="label label-danger">UI Design</span>
-                <span class="label label-success">Coding</span>
-                <span class="label label-info">Javascript</span>
-                <span class="label label-warning">PHP</span>
-                <span class="label label-primary">Node.js</span>
-              </p>
-
-            
-
-            </div>
-            <!-- /.box-body -->
-          </div>
+         
           <!-- /.box -->
         </div>
         <!-- /.col -->
@@ -82,7 +49,7 @@ $persone=$sevPersone->findById($_SESSION['idPersone']);
               <!-- /.tab-pane -->
 
               <div class="active tab-pane" id="activity">
-                <form class="row" action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" role="form" enctype="multipart/form-data" id="fupForm" >
+                <form class="row"   role="form" enctype="multipart/form-data" id="fupForm" >
                 <div class="form-group col-sm-6">
                     <label for="matricule" >Matricule</label>
                     <div >
@@ -135,7 +102,7 @@ $persone=$sevPersone->findById($_SESSION['idPersone']);
                   </div>
                   <div class="form-group col-sm-6">
                     <div>
-                      <button type="submit" id="modifier" class="btn btn-danger">Submit</button>
+                      <button type="submit" id="modifier" class="btn btn-primary">Valider</button>
                     </div>
                   </div>
                 </form>
@@ -159,10 +126,11 @@ $persone=$sevPersone->findById($_SESSION['idPersone']);
     $(document).ready(function(){
 
       $('#fupForm').on('submit',function(e){ 
+        
       e.preventDefault();
       $.ajax({
 
-url : 'http://localhost:8080/Gestion/admin/api/update_profile.php',
+url : 'http://localhost:8888/Gestion/admin/api/update_profile.php',
 type : 'POST',
 contentType: false,
 cache: false,
@@ -170,16 +138,6 @@ processData:false,
 data : new FormData(this),
 success : function (data) {
 
-/*$('#nom').val('');
-$('#prenom').val(''); 
-$('#email').val('');
-$('#tele').val('');
-$('#pass').val('');
-$('#matricule').val('');
-$('#adress').val('');
-$('#dateN').val(false);
-$('#image').val('');
-*/
 
 swal("Profile a été Modifier avec succès",'', "success");    
 
