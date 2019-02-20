@@ -2,8 +2,8 @@
 <?php
 
 if(isset($_GET['id'])){
-    $serCategorie=new CategoriesService();
-    $Categorie=$serCategorie->findCategoriebyId($_GET['id']);
+    $servcat=new CategoriesService();
+    $Categorie=$servcat->findCategoriebyId($_GET['id']);
 }
 
 ?>
@@ -95,3 +95,9 @@ error : function(error){
 
 
     <?php include_once 'include/footer.php'; ?>
+
+
+
+
+
+    

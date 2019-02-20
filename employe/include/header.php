@@ -157,8 +157,8 @@ if(isset($_SESSION['idPersone'])){
            </span>
          </a>
          <ul class="treeview-menu">     
-         <li><a href="article.php"><i class="fa fa-circle-o"></i> Article</a></li>       
-           <li><a href="Ajouter_article.php"><i class="fa fa-circle-o"></i> Ajouter Article</a></li>
+         <li><a href="Article.php"><i class="fa fa-circle-o"></i> Article</a></li>       
+           <li><a href="Ajouter_Articl.php"><i class="fa fa-circle-o"></i> Ajouter Article</a></li>
            
           
          </ul>

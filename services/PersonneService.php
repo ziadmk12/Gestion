@@ -71,8 +71,14 @@ class PersonneService
 
         ));
 
-        
+    }
+    public function findAll() {
 
+        $sql = "SELECT * FROM personne";
+        $stmt = $this->conn->getConn()->prepare($sql);
+        $stmt->execute([]);
+
+        return $stmt->fetchAll();
     }
 
 }

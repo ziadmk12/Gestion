@@ -59,10 +59,6 @@ class CategoriesService
     }
 
 
-
-    
-
-
     public function updateCategories($obj) {
 
         $sql = "update categories 

@@ -118,11 +118,7 @@ if(isset($_GET['id'])){
       e.preventDefault();
       $.ajax({
 
-<<<<<<< HEAD
-url : 'http://localhost/Gestion/admin/api/update_employe.php',
-=======
-url : 'http://localhost/Gestion/admin/api/update_employe.php',
->>>>>>> 47e8a5ab8f1618dd72af76f60c2cbc3a5ba35722
+url : 'http://localhost:8888/Gestion/admin/api/update_employe.php',
 type : 'POST',
 contentType: false,
 cache: false,
