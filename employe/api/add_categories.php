@@ -7,7 +7,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
     $nom=$_POST['Nom'];
     $description=$_POST['Descrip'];
-    $dateAdd=$_POST['datadd'];
+   
 
 
 

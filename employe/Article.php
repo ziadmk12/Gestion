@@ -34,8 +34,7 @@ $find=$artService->findAllByPers($_SESSION['idPersone']);
                   <th>Code</th>
                   <th>Stock</th>
                   <th>Date add</th>
-                  <th>ID employee</th>
-                  <th>ID categorie</th>
+                  <th>categorie</th>
                   <th></th>
                   <th></th>
 
@@ -50,8 +49,8 @@ $find=$artService->findAllByPers($_SESSION['idPersone']);
                   <td style="line-height: 3;"><?php echo $value->CodeArticle ?></td>
                   <td style="line-height: 3;"><?php echo $value->Stock ?></td>
                   <td style="line-height: 3;"><?php echo $value->DateAddArt ?></td>
-                  <td style="line-height: 3;"><?php echo $value->Pers_id ?></td>
-                  <td style="line-height: 3;"><?php echo $value->id_cat ?></td>
+                  
+                  <td style="line-height: 3;"><?php echo $value->cat_name ?></td>
                   <td data-id="<?php echo $value->Article_ID ?>" ><button class="btn btn-danger" >Supprimer</button></td>
                   <td><button class="btn btn-success"><a style="color: #ecf0f6;" href="update_article.php?id=<?php echo $value->Article_ID ?>">Modifier</a></button></td>
                   

@@ -1,8 +1,10 @@
 <?php include_once 'include/header.php'; ?>
 <?php 
 include_once '../racine.php';
-$catservice=new CategoriesService();
-$find=$catservice->findAllCat();
+
+$servArt = new ArticleService();
+$find=$servArt->AllArticle();
+
 
 ?>
 
@@ -32,15 +34,11 @@ $find=$catservice->findAllCat();
                   
                   <th>Nom</th>
                   <th>code</th>
-                  <th>reference</th>
-                  <th>unite</th>
-                  <th>reserve</th>
-                  <th>seuil</th>
-                  <th>date add</th>
-                  <th>fournisseur</th>
-                  <th>categorie</th>
-                  <th></th>
-                  <th></th>
+                  <th>Stock</th>
+                  <th>Date add</th>
+                  <th>Créateur</th>
+                  <th>Categorie</th>
+
 
                 </tr>
                 </thead>
@@ -51,18 +49,14 @@ $find=$catservice->findAllCat();
 
                 <tr>
 
-                  <td style="line-height: 3;"><?php echo $value->cat_name;   ?></td>
-                  <td style="line-height: 3;"><?php echo $value->descrip;   ?></td>
-                  <td style="line-height: 3;"><?php echo $value->date_add; ?></td>
-                  <td style="line-height: 3;"><?php echo $value->date_add; ?></td>
-                  <td style="line-height: 3;"><?php echo $value->date_add; ?></td>
-                  <td style="line-height: 3;"><?php echo $value->date_add; ?></td>
-                  <td style="line-height: 3;"><?php echo $value->date_add; ?></td>
-                  <td style="line-height: 3;"><?php echo $value->date_add; ?></td>
-                  <td style="line-height: 3;"><?php echo $value->date_add; ?></td>
-                  <td style="line-height: 3;"><?php echo $value->date_add; ?></td>
-                  <td data-id="<?php echo $value->cat_id; ?>" ><button class="btn btn-danger" >Supprimer</button></td>
-                  <td><button class="btn btn-success"><a style="color: #ecf0f6;" href="update_categories.php?id=<?php echo $value->cat_id ; ?>">Modifier</a></button></td>
+                  <td style="line-height: 3;"><?php echo $value->Article_Name;   ?></td>
+                  <td style="line-height: 3;"><?php echo $value->CodeArticle;   ?></td>
+                  <td style="line-height: 3;"><?php echo $value->Stock; ?></td>
+                  <td style="line-height: 3;"><?php echo $value->DateAddArt; ?></td>
+                  <td style="line-height: 3;"><?php echo $value->nom .' '.$value->prenom; ?></td>
+                  <td style="line-height: 3;"><?php echo $value->cat_name; ?></td>
+                  
+                  
                   
                   
                   

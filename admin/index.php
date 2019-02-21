@@ -6,6 +6,8 @@ $compser= new CompteService();
 $count=$compser->coutEmploye();
 $servCategorie = new CategoriesService();
 $countCategorie=$servCategorie->coutCategorie();
+$servArticle =new ArticleService();
+$countArticle=$servArticle->coutArticle();
 
 
 ?>
@@ -18,14 +20,14 @@ $countCategorie=$servCategorie->coutCategorie();
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>x</h3>
+              <h3><?php echo $countArticle ?></h3>
 
               <p>Article</p>
             </div>
             <div class="icon">
               <i class="ion ion-bag"></i>
             </div>
-            <a href="#" class="small-box-footer">Détails <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="article.php" class="small-box-footer">Détails <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
 

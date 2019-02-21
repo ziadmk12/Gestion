@@ -2,7 +2,7 @@
 <?php
 include_once '../racine.php';
 $servcat=new CategoriesService();
-$findcat=$servcat->findAllCat();
+$findcat=$servcat->findAllCatper($_SESSION['idPersone']);
 
 
 if(isset($_GET['id'])){

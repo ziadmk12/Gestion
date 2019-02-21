@@ -17,7 +17,7 @@ public function findAllArticle() {
 }
 public function findAllByPers($id) {
 
-    $sql = "SELECT * FROM article WHERE article.Pers_id=:id";
+    $sql = "SELECT article.*,categories.cat_name FROM article  INNER JOIN categories on categories.cat_id=article.id_cat WHERE article.Pers_id=:id";
     $stmt = $this->conn->getConn()->prepare($sql);
     $stmt->execute(['id'=>$id]);
 
@@ -71,6 +71,31 @@ public function deleteArticle($id)
     $sql = "DELETE FROM article WHERE Article_ID = :Article_ID";
     $stmt = $this->conn->getConn()->prepare($sql);
     $stmt->execute(['Article_ID'=>$id]);
+}
+public function coutArticlebypers($id) {
+
+    $sql = "SELECT * FROM article WHERE Pers_id=:Pers_id";
+    $stmt = $this->conn->getConn()->prepare($sql);
+    $stmt->execute(['Pers_id'=>$id]);
+
+    return $stmt->rowCount();
+}
+public function coutArticle() {
+
+    $sql = "SELECT * FROM article";
+    $stmt = $this->conn->getConn()->prepare($sql);
+    $stmt->execute([]);
+
+    return $stmt->rowCount();
+}
+
+public function AllArticle() {
+
+    $sql = "SELECT article.*,personne.nom,personne.prenom,categories.cat_name FROM article INNER JOIN personne on personne.id=article.Pers_id INNER JOIN categories on categories.cat_id=article.id_cat";
+    $stmt = $this->conn->getConn()->prepare($sql);
+    $stmt->execute([]);
+
+    return $stmt->fetchAll();
 }
 
 

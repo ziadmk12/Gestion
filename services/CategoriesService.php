@@ -48,6 +48,7 @@ class CategoriesService
 
         return $stmt->fetchAll();
     }
+    
     public function findAllNameCat($id) {
 
         $sql = "SELECT categories.cat_name from categories

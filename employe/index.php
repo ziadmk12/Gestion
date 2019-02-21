@@ -5,6 +5,8 @@ include_once '../racine.php';
 
 $servCategorie = new CategoriesService();
 $countCategorie=$servCategorie->coutCategoriespers($_SESSION["idPersone"]);
+$servArticle=new ArticleService();
+$coutArticle=$servArticle->coutArticlebypers($_SESSION["idPersone"]);
 
 
 ?>
@@ -18,7 +20,7 @@ $countCategorie=$servCategorie->coutCategoriespers($_SESSION["idPersone"]);
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>x</h3>
+              <h3><?php echo $coutArticle;  ?></h3>
 
               <p>Article</p>
             </div>

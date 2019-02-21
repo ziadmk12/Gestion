@@ -2,7 +2,7 @@
 <?php  
 include_once '../racine.php';
 $servcat=new CategoriesService();
-$findcat=$servcat->findAllCat();
+$findcat=$servcat->findAllCatper($_SESSION['idPersone']);
 $servpersonne=new PersonneService();
 $findpers=$servpersonne->findAll();
 ?>
@@ -41,18 +41,13 @@ $findpers=$servpersonne->findAll();
                   <input required name="stock" id="stock" type="text" class="form-control" >
                 </div>
               </div>
-              <div class="col-md-6">
-              <div class="form-group">
-                  <label for="exampleInputEmail1">Date add</label>
-                  <input required name="dateadd" id="dateadd" type="date" class="form-control"  >
-                </div>
-              </div>
+              
               
               
 
               <div class="col-md-6">
               <div class="form-group">
-                  <label for="exampleInputEmail1">Categorie id</label>
+                  <label for="exampleInputEmail1">Categorie</label>
                   <select required  class="form-control" name="cat_id" id="cat_id">
                   <?php foreach ($findcat as $value)  {?>
                   <option value="<?php echo $value->cat_id ?>"><?php echo $value->cat_name ?>

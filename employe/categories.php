@@ -2,7 +2,7 @@
 <?php 
 include_once '../racine.php';
 $catservice=new CategoriesService();
-$find=$catservice->findAllCatper($_SESSION["idPersone"]);
+$find=$catservice->findAllCatper($_SESSION['idPersone']);
 
 
 ?>
