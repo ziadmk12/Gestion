@@ -2,7 +2,7 @@
 <?php 
 include_once '../racine.php';
 $artService=new ArticleService();
-$find=$artService->findAllArticle();
+$find=$artService->findAllByPers($_SESSION['idPersone']);
 
 
 ?>

@@ -15,6 +15,14 @@ public function findAllArticle() {
 
     return $stmt->fetchAll();
 }
+public function findAllByPers($id) {
+
+    $sql = "SELECT * FROM article WHERE article.Pers_id=:id";
+    $stmt = $this->conn->getConn()->prepare($sql);
+    $stmt->execute(['id'=>$id]);
+
+    return $stmt->fetchAll();
+}
 
 public function createArticle($obj) {
 
