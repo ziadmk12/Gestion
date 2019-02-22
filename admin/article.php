@@ -82,5 +82,18 @@ $find=$servArt->AllArticle();
     
     <!-- /.content -->
 
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script>
+    $(function () {
+    $('#example1').DataTable({})
+    
+  })
+    $(document).ready(function(){
+     
+     
+    });
+    </script>
+
+
 
 <?php include_once 'include/footer.php'; ?>
