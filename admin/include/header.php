@@ -161,7 +161,7 @@ if(isset($_SESSION['idPersone'])){
             </span>
           </a>
           <ul class="treeview-menu">     
-          <li><a href="#"><i class="fa fa-circle-o"></i> x</a></li>       
+          <li><a href="RechercheBetweenDate.php"><i class="fa fa-circle-o"></i>Entre deux dates</a></li>       
             <li><a href="#"><i class="fa fa-circle-o"></i> x</a></li>
           </ul>
         </li>

@@ -41,8 +41,8 @@ class CategoriesService
     }
     public function findAllCatper($id) {
 
-        $sql = "SELECT categories.*,personne.prenom,personne.nom FROM categories
-        inner JOIN personne ON personne.id=categories.id_perso where personne.id=:id ";
+        $sql = "SELECT categories.*,personne.nom,personne.prenom FROM categories
+        inner JOIN personne ON personne.id=categories.id_perso WHERE date_add BETWEEN :date1 AND :date2 ";
         $stmt = $this->conn->getConn()->prepare($sql);
         $stmt->execute(['id'=>$id]);
 
@@ -70,9 +70,6 @@ class CategoriesService
             'cat_name' => $obj->getcat_name(),
             'descrip' => $obj->getdescrip(),
             'cat_id' => $obj->getcat_id()
-
-
-
         ));
 
     }
@@ -98,6 +95,28 @@ class CategoriesService
         $stmt->execute(['id'=>$id]);
 
         return $stmt->rowCount();
+    }
+    public function findCategorieBetweendates($date1,$date2) {
+
+        $sql = "SELECT categories.*,personne.nom,personne.prenom FROM categories 
+        inner JOIN personne ON personne.id=categories.id_perso WHERE date_add BETWEEN :date1 AND :date2
+        ";
+        $stmt = $this->conn->getConn()->prepare($sql);
+        $stmt->execute([
+            'date1'=>$date1,
+            'date2'=>$date2
+            ]);
+
+        return $stmt->fetchAll();
+    }
+
+    public function NombreCategorieParPersonne() {
+
+        $sql = "SELECT personne.prenom,personne.nom,COUNT(*) as 'nombre categorie' FROM categories INNER JOIN personne on personne.id=categories.id_perso GROUP BY id_perso";
+        $stmt = $this->conn->getConn()->prepare($sql);
+        $stmt->execute([]);
+
+        return $stmt->fetchAll();
     }
 
 
