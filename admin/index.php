@@ -9,6 +9,8 @@ $countCategorie=$servCategorie->coutCategorie();
 $servArticle =new ArticleService();
 $countArticle=$servArticle->coutArticle();
 
+$cotchar=$servCategorie->NombreCategorieParPersonne();
+
 
 ?>
   
@@ -64,15 +66,37 @@ $countArticle=$servArticle->coutArticle();
         </div>
       </div>
 
+      
     
       <!-- /.row -->
+
+      <div class="container" ">
+            <canvas id="myChart"></canvas>
+          </div>
     
     </section>
 
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
     
 
+<script>
+
+$(document).ready(function(){
+  /*var tempArray = <?php //echo json_encode($cotchar); ?>;
 
 
+var nbre = tempArray.map(function (current) {
+  return current.nbr;
+});
+
+var nom = tempArray.map(function (current) {
+  return current.nom;
+});
+*/
+
+
+});
+</script>
 
 
 

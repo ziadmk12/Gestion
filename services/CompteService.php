@@ -18,7 +18,7 @@ class CompteService
 
         $sql = "SELECT * FROM compte
         INNER JOIN personne ON personne.id=compte.personne_id
-        WHERE compte.grade='employee'";
+        WHERE compte.grade='chef'";
         $stmt = $this->conn->getConn()->prepare($sql);
         $stmt->execute([]);
 
@@ -48,7 +48,7 @@ class CompteService
     }
     public function coutEmploye() {
 
-        $sql = "SELECT * FROM personne INNER JOIN compte on personne.id=compte.personne_id WHERE compte.grade='employee'";
+        $sql = "SELECT * FROM personne INNER JOIN compte on personne.id=compte.personne_id WHERE compte.grade='chef'";
         $stmt = $this->conn->getConn()->prepare($sql);
         $stmt->execute([]);
 

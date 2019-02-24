@@ -33,7 +33,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $sevPersone=new PersonneService();
     $id=$sevPersone->createPersone($pers);
 
-    $comp=new Compte($email,$pass,$id,$grade);
+    $comp=new Compte($email,$pass,$id,'chef');
     $compteservice=new CompteService();
     $compteservice->create($comp);
 

@@ -85,14 +85,7 @@ if(isset($_GET['id'])){
                 </div>
               </div>
               <div class="col-md-4">
-              <div class="form-group">
-                  <label for="exampleInputEmail1">Grade</label>
-                  <select  class="form-control" name="grade" id="grade">
-                  <option <?php ($compte->grade ==='employee') ? selected : ''; ?>>employee</option>
-                  <option <?php ($compte->grade ==='fournisseur') ? selected : ''; ?>>fournisseur</option>
-                  </select>
-                </div>
-              </div>
+           
               </div>
               </div>
               <div class="box-footer">
@@ -126,16 +119,7 @@ processData:false,
 data : new FormData(this),
 success : function (data) {
 
-/*$('#nom').val('');
-$('#prenom').val(''); 
-$('#email').val('');
-$('#tele').val('');
-$('#pass').val('');
-$('#matricule').val('');
-$('#adress').val('');
-$('#dateN').val(false);
-$('#image').val('');
-*/
+
 
 swal("Employé a été Modifier avec succès",'', "success");    
 

@@ -40,7 +40,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $person->setId($id);
     $persoserve=new PersonneService();
     $persoserve->updatePersonne($person);
-    $compte=new Compte($email,$pass,null,$grade);
+    $compte=new Compte($email,$pass,null,'chef');
     $compte->setId($id_c);
     $comservice=new CompteService();
     $comservice->updateCompte($compte);

@@ -71,14 +71,7 @@ include_once 'include/header.php';
                 </div>
               </div>
               <div class="col-md-4">
-              <div class="form-group">
-                  <label for="exampleInputEmail1">Grade</label>
-                  <select required  class="form-control" name="grade" id="grade">
-                  <option>employee</option>
-                  <option>fournisseur</option>
-                  </select>
-                </div>
-              </div>
+            
               </div>
               </div>
               <div class="box-footer">

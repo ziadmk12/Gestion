@@ -112,7 +112,7 @@ class CategoriesService
 
     public function NombreCategorieParPersonne() {
 
-        $sql = "SELECT personne.prenom,personne.nom,COUNT(*) as 'nombre categorie' FROM categories INNER JOIN personne on personne.id=categories.id_perso GROUP BY id_perso";
+        $sql = "SELECT personne.nom,COUNT(*) as 'nbr' FROM categories INNER JOIN personne on personne.id=categories.id_perso GROUP BY id_perso";
         $stmt = $this->conn->getConn()->prepare($sql);
         $stmt->execute([]);
 

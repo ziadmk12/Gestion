@@ -18,7 +18,7 @@ if(isset($_POST['email'])){
       $_SESSION['idPersone']=$value->personne_id;
         header('location:admin/');
       exit;
-    }elseif($value->login === $user && $value->pass===$pass && $value->grade==="employee"){
+    }elseif($value->login === $user && $value->pass===$pass && $value->grade==="chef"){
       $_SESSION['email']=$user;
       $_SESSION['pass']=$pass;
       $_SESSION['idPersone']=$value->personne_id;

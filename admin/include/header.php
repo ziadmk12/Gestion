@@ -120,7 +120,7 @@ if(isset($_SESSION['idPersone'])){
         </div>
         <div class="pull-left info">
           <p><?php  echo $personne->nom.' '.$personne->prenom   ?></p>
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          <a href=""><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
       
@@ -128,20 +128,33 @@ if(isset($_SESSION['idPersone'])){
       <ul class="sidebar-menu" data-widget="tree">        
        
         <li class="treeview">
-          <a href="#">
-            <i class="fa fa-user"></i> <span>Gestion Employee</span>
+          <a href="">
+            <i class="fa fa-user"></i> <span>Gestion Chef</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">     
-          <li><a href="Employe.php"><i class="fa fa-circle-o"></i> Employee</a></li>       
+          <li><a href="Employe.php"><i class="fa fa-circle-o"></i> Chef</a></li>       
             <li><a href="Ajouter_Employe.php"><i class="fa fa-circle-o"></i> Ajouter</a></li>
           </ul>
         </li>
 
         <li class="treeview">
-          <a href="#">
+          <a href="">
+            <i class="fa fa-user"></i> <span>Gestion Spécialiste</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">     
+          <li><a href="#"><i class="fa fa-circle-o"></i> Spécialiste</a></li>       
+            <li><a href="#"><i class="fa fa-circle-o"></i> Ajouter</a></li>
+          </ul>
+        </li>
+
+        <li class="treeview">
+          <a href="">
             <i class="fa fa-book"></i> <span>Consulte</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -154,7 +167,7 @@ if(isset($_SESSION['idPersone'])){
         </li>
         
         <li class="treeview">
-          <a href="#">
+          <a href="">
             <i class="fa fa-search"></i> <span>Recherche</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
