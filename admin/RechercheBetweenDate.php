@@ -20,7 +20,6 @@ if(isset($_POST['submit']))
 <section class="content-header">
       <h1>
        List des Categories
-
       </h1>
      
     </section>
@@ -52,39 +51,8 @@ if(isset($_POST['submit']))
               </form>
             </div>
             <!-- /.box-header -->
-            <div class="box-body">
-              <table id="example1" class="table table-bordered table-striped">
-                <thead>
-                <tr> 
-                  <th>Nom</th>
-                  <th>Description</th>
-                  <th>Date add</th>
-                  <th>Créateur</th>
-                </tr>
-                </thead>
-                <tbody id="tbody">
-                <?php
-                foreach ($find as $value){
-                   ?>
-
-                <tr>
-
-                  <td style="line-height: 3;"><?php echo $value->cat_name;   ?></td>
-                  <td style="line-height: 3;"><?php echo $value->descrip;   ?></td>
-                  <td style="line-height: 3;"><?php echo $value->date_add; ?></td>
-                  <td style="line-height: 3;"><?php echo $value->nom .' '.$value->prenom; ?></td>
-                  
-                  
-                  
-                </tr>
-
-
-                <?php }  ?>
-                
-                
-                </tbody>
-                
-              </table>
+            <div class="box-body" id="div_tab">
+             
             </div>
             <!-- /.box-body -->
           </div>
@@ -94,9 +62,44 @@ if(isset($_POST['submit']))
       </div>
       <!-- /.row -->
     </section>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
 
-    
+  $('#fupForm').on('submit',function(e){ 
+      e.preventDefault();
+      var date1=$('#date1').val();
+      var date2=$('#date2').val();
+     
+      $.ajax({
 
+url : 'http://localhost:8888/Gestion/employe/api/categories_between_date.php',
+type : 'POST',
+contentType: false,
+cache: false,
+processData:false,
+data : new FormData(this),
+success : function (data) {
+
+var  res="<table id='example1' class='table table-bordered table-striped'><thead><tr> <th>Nom</th><th>Description</th><th>Date add</th><th>Créateur</th></tr></thead><tbody id='tbody'>";
+for(var i=0;i<data.length;i++){
+ res +="<tr><td>"+data[i].cat_name+"</td><td>"+data[i].descrip+"</td><td>"+data[i].date_add+"</td><td>"+data[i].nom+" "+data[i].prenom+"</td></tr>";
+}
+
+res += "</tbody></table>";
+   $('#div_tab').empty();
+   $('#div_tab').html(res);
+
+},
+error : function(error){
+    console.log(error);
+}
+
+});
+    });
+
+});
+</script>
 
 
 
