@@ -50,7 +50,7 @@ $findpers=$servpersonne->findAll();
                   <label for="exampleInputEmail1">Categorie</label>
                   <select required  class="form-control" name="cat_id" id="cat_id">
                   <?php foreach ($findcat as $value)  {?>
-                  <option value="<?php echo $value->cat_id ?>"><?php echo $value->cat_name ?>
+                  <option value="<?php echo $value->cat_id; ?>"><?php echo $value->cat_name; ?>
                   
                   </option>
                   <?php  }?>

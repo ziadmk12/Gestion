@@ -88,6 +88,28 @@ class CompteService
         
 
     }
+    public function findEmployebychef() {
+
+        $sql = "SELECT compte.*,personne.*,specialiste.nom as 'snom' FROM compte
+        INNER JOIN personne ON personne.id=compte.personne_id
+        INNER JOIN specialiste ON compte.specialiste=specialiste.id
+        WHERE compte.grade ='chef'";
+        $stmt = $this->conn->getConn()->prepare($sql);
+        $stmt->execute([]);
+
+        return $stmt->fetchAll();
+    }
+    public function findEmployebyfourn() {
+
+        $sql = "SELECT compte.*,personne.*,specialiste.nom as 'snom' FROM compte
+        INNER JOIN personne ON personne.id=compte.personne_id
+        INNER JOIN specialiste ON compte.specialiste=specialiste.id
+        WHERE compte.grade ='fournisseur'";
+        $stmt = $this->conn->getConn()->prepare($sql);
+        $stmt->execute([]);
+
+        return $stmt->fetchAll();
+    }
 
 
     

@@ -45,7 +45,7 @@ $cotchar=$servCategorie->NombreCategorieParPersonne();
             <div class="icon">
               <i class="ion ion-person-add"></i>
             </div>
-            <a href="#" class="small-box-footer">Détails <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="chef.php" class="small-box-footer">Détails <i class="fa fa-arrow-circle-right"></i></a>
           </div>
           
         </div>
@@ -76,7 +76,7 @@ $cotchar=$servCategorie->NombreCategorieParPersonne();
             <div class="icon">
               <i class="ion ion-stats-bars"></i>
             </div>
-            <a href="#" class="small-box-footer">Détails<i class="fa fa-arrow-circle-right"></i></a>
+            <a href="fournisseur.php" class="small-box-footer">Détails<i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
       </div>

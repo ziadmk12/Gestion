@@ -39,10 +39,10 @@ class CategoriesService
 
         return $stmt->fetchAll();
     }
+    
     public function findAllCatper($id) {
 
-        $sql = "SELECT categories.*,personne.nom,personne.prenom FROM categories
-        inner JOIN personne ON personne.id=categories.id_perso WHERE date_add BETWEEN :date1 AND :date2 ";
+        $sql = "SELECT *  FROM categories WHERE id_perso=:id";
         $stmt = $this->conn->getConn()->prepare($sql);
         $stmt->execute(['id'=>$id]);
 
