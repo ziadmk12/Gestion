@@ -1,11 +1,12 @@
 <?php include_once 'include/header.php'; ?>
 <?php
-
+//include_once '../racine.php';
 $sevPersone=new PersonneService();
 $persone=$sevPersone->findById($_SESSION['idPersone']);
 $catservice=new CategoriesService();
 $NameC=$catservice->findAllNameCat($_SESSION["idPersone"]);
-
+$servArticl=new ArticleService();
+$NameArt=$servArticl->findAllByPers($_SESSION["idPersone"]);
 
 
 ?>
@@ -49,6 +50,7 @@ $NameC=$catservice->findAllNameCat($_SESSION["idPersone"]);
            
 
               <strong><i class="fa fa-pencil margin-r-5"></i> Categories</strong>
+              
 
               <p>
               <?php
@@ -61,6 +63,23 @@ $NameC=$catservice->findAllNameCat($_SESSION["idPersone"]);
                 <?php
               }
               ?>
+              
+                
+              </p>
+              <strong><i class="fa fa-pencil margin-r-5"></i> Article</strong>
+
+              <p>
+              <?php
+              foreach ($NameArt as  $Name) {
+                ?>
+
+                <span class="label label-danger"><?php echo $Name->Article_Name; ?></span>
+              
+
+                <?php
+              }
+              ?>
+              
                 
               </p>
              

@@ -1,6 +1,12 @@
 <?php
 include_once 'include/header.php';
 ?>
+<?php
+include_once '../racine.php';
+$servSpercialiste = new SpecialisteService();
+$find=$servSpercialiste->findAllSpecial();
+
+?>
     <!-- Main content -->
     <section class="content">
       <div class="row">
@@ -70,9 +76,16 @@ include_once 'include/header.php';
                   <input required name="image" id="image" type="file" class="form-control"  >
                 </div>
               </div>
+              <?php foreach ($find as $value) { ?>
               <div class="col-md-4">
-            
+              <div class="form-group">
+                  <label for="exampleInputEmail1">Specialite</label>
+                  <select class="form-control">
+                  <option value="<?php echo $value->id?>"> <?php echo $value->nom; ?> </option>
+                  </select>
+                </div>
               </div>
+              <?php } ?>
               </div>
               <div class="box-footer">
                 <button type="submit" id="ajouter" class="btn btn-primary">Ajouter</button>

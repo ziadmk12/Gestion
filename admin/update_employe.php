@@ -84,9 +84,7 @@ if(isset($_GET['id'])){
 
                 </div>
               </div>
-              <div class="col-md-4">
-           
-              </div>
+              
               </div>
               <div class="box-footer">
                 <button type="submit" id="modifier" class="btn btn-primary">Modifier</button>
