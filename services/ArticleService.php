@@ -26,7 +26,7 @@ public function findAllByPers($id) {
 
 public function createArticle($obj) {
 
-    $sql = "INSERT INTO `article`(`Article_Name`, `CodeArticle`, `Stock`, `DateAddArt`, `Pers_id`, `id_cat`) VALUES (:Article_Name,:CodeArticle,:Stock,:DateAddArt,:Pers_id,:id_cat)";
+    $sql = "INSERT INTO `article`(`Article_Name`, `CodeArticle`, `Stock`, `DateAddArt`, `Pers_id`, `id_cat`, `image`) VALUES (:Article_Name,:CodeArticle,:Stock,:DateAddArt,:Pers_id,:id_cat,:image)";
     $stmt = $this->conn->getConn()->prepare($sql);
     $stmt->execute(array(
 
@@ -35,7 +35,9 @@ public function createArticle($obj) {
         'Stock' => $obj->getstock(),
         'DateAddArt'=>$obj->getdateAddArt(),
         'Pers_id'=>$obj->getper_id(),
-        'id_cat'=>$obj->getid_cat()
+        'id_cat'=>$obj->getid_cat(),
+        'image'=>$obj->getimage()
+
         
     ));
    
@@ -51,7 +53,7 @@ public function findArticleById($id) {
 }
 public function updateArticle($obj) {
 
-    $sql = "UPDATE article SET Article_Name=:Article_Name,CodeArticle=:CodeArticle,Stock=:Stock,DateAddArt=:DateAddArt,Pers_id=:Pers_id,id_cat=:id_cat WHERE Article_ID=:Article_ID";
+    $sql = "UPDATE article SET Article_Name=:Article_Name,CodeArticle=:CodeArticle,Stock=:Stock,DateAddArt=:DateAddArt,Pers_id=:Pers_id,id_cat=:id_cat,image=:image WHERE Article_ID=:Article_ID";
     $stmt = $this->conn->getConn()->prepare($sql);
     $stmt->execute(array(
 
@@ -61,7 +63,8 @@ public function updateArticle($obj) {
         'DateAddArt'=>$obj->getdateAddArt(),
         'Pers_id'=>$obj->getper_id(),
         'id_cat'=>$obj->getid_cat(),
-        'Article_ID'=>$obj->getarticle_ID()
+        'Article_ID'=>$obj->getarticle_ID(),
+        'image'=>$obj->getimage()
 
     ));
 

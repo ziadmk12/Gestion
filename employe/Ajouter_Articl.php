@@ -56,7 +56,12 @@ $findpers=$servpersonne->findAll();
                   <?php  }?>
                   </select>
                 </div>
-                
+              </div>
+              <div class="col-md-4">
+              <div class="form-group">
+                  <label for="exampleInputEmail1">Image</label>
+                  <input required name="image" id="image" type="file" class="form-control"  >
+                </div>
               </div>
               
               </div>
@@ -101,6 +106,7 @@ $('#stock').val('');
 $('#dateadd').val('');
 $('#per_id').val('');
 $('#cat_id').val('');
+$('#image').val(null);
 
 
 

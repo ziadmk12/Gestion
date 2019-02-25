@@ -28,8 +28,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
 
 
-
-
     $pers=new Personne($matricule,$nom,$prenom,$datenaissance,$adresse,$email,$telefone,$image);
     $sevPersone=new PersonneService();
     $id=$sevPersone->createPersone($pers);

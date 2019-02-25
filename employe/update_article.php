@@ -65,6 +65,16 @@ if(isset($_GET['id'])){
                 <input  value="<?php echo $Article->Article_ID; ?>" name="id" id="id" type="hidden" class="form-control"  >
               </div>  
             </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                  <label for="exampleInputEmail1">Image</label>
+                  <input  name="image" id="image" type="file" class="form-control"  >
+                  <input  value="<?php echo $Article->image; ?>"  name="old_image" id="old_image" type="hidden" class="form-control"  >
+                 
+
+
+                </div>
+              </div>
                         
             </div>
             <div class="box-footer">

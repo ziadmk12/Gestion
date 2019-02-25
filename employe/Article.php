@@ -29,7 +29,7 @@ $find=$artService->findAllByPers($_SESSION['idPersone']);
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  
+                  <th>#</th>
                   <th>Nom article</th>
                   <th>Code</th>
                   <th>Stock</th>
@@ -45,6 +45,8 @@ $find=$artService->findAllByPers($_SESSION['idPersone']);
 
                 <tr>
 
+                <td><img style="width: 100px;
+    height: 30px;" src="../images/<?php echo $value->image; ?>"></td>
                   <td style="line-height: 3;"><?php echo $value->Article_Name ?></td>
                   <td style="line-height: 3;"><?php echo $value->CodeArticle ?></td>
                   <td style="line-height: 3;"><?php echo $value->Stock ?></td>

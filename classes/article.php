@@ -10,8 +10,9 @@ private $stock;
 private $dateAddArt;
 private $per_id;
 private $id_cat;
+private $image;
 
-public function __construct($article_Name,$codeArticle,$stock,$dateAddArt,$per_id,$id_cat)
+public function __construct($article_Name,$codeArticle,$stock,$dateAddArt,$per_id,$id_cat,$image)
 {
     $this->article_Name=$article_Name;
     $this->codeArticle=$codeArticle;
@@ -19,6 +20,7 @@ public function __construct($article_Name,$codeArticle,$stock,$dateAddArt,$per_i
     $this->dateAddArt=$dateAddArt;
     $this->per_id=$per_id;
     $this->id_cat=$id_cat;
+    $this->image=$image;
 
 }
 
@@ -83,6 +85,15 @@ public function getid_cat()
 public function setid_cat($id_cat)
 {
     $this->id_cat=$id_cat;
+}
+////////////////////
+public function getimage()
+{
+    return $this->image;
+}
+public function setimage($image)
+{
+    $this->image=$image;
 }
 
 
