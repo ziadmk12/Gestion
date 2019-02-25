@@ -19,6 +19,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $image=$_FILES['image']['name'];
     $grade=$_POST['grade'];
     $pass=$_POST['pass'];
+    $specialite=$_POST['specialite'];
 
 
     $target_dir='../../images/';
@@ -33,7 +34,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $sevPersone=new PersonneService();
     $id=$sevPersone->createPersone($pers);
 
-    $comp=new Compte($email,$pass,$id,'chef');
+    $comp=new Compte($email,$pass,$id,$grade,$specialite);
     $compteservice=new CompteService();
     $compteservice->create($comp);
 

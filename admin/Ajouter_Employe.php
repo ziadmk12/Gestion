@@ -6,6 +6,8 @@ include_once '../racine.php';
 $servSpercialiste = new SpecialisteService();
 $find=$servSpercialiste->findAllSpecial();
 
+
+
 ?>
     <!-- Main content -->
     <section class="content">
@@ -76,16 +78,33 @@ $find=$servSpercialiste->findAllSpecial();
                   <input required name="image" id="image" type="file" class="form-control"  >
                 </div>
               </div>
-              <?php foreach ($find as $value) { ?>
+            
               <div class="col-md-4">
               <div class="form-group">
                   <label for="exampleInputEmail1">Specialite</label>
-                  <select class="form-control">
+                  <select class="form-control" name="specialite">
+                  <option hidden>Selecter Specialite</option>
+                  <?php foreach ($find as $value) { ?>
                   <option value="<?php echo $value->id?>"> <?php echo $value->nom; ?> </option>
+                  <?php } ?>
                   </select>
                 </div>
               </div>
-              <?php } ?>
+
+              <div class="col-md-4">
+              <div class="form-group">
+                  <label >Grade</label>
+                  <select class="form-control" name="grade">
+                  <option hidden>Selecter Grade</option>
+                  <option value="chef">Chef</option>
+                  <option value="fournisseur">Fournisseur</option>
+                  </select>
+                </div>
+              </div>
+              </div>
+
+             
+            
               </div>
               <div class="box-footer">
                 <button type="submit" id="ajouter" class="btn btn-primary">Ajouter</button>
@@ -124,7 +143,7 @@ $('#email').val('');
 $('#tele').val('');
 $('#pass').val('');
 $('#matricule').val('');
-$('#adress').val('');
+$('#adresse').val('');
 $('#dateN').val(false);
 $('#image').val('');
 

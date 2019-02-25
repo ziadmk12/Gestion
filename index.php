@@ -25,6 +25,13 @@ if(isset($_POST['email'])){
         header('location:employe/');
       exit;
     }
+    elseif($value->login === $user && $value->pass===$pass && $value->grade==="fournisseur"){
+      $_SESSION['email']=$user;
+      $_SESSION['pass']=$pass;
+      $_SESSION['idPersone']=$value->personne_id;
+        header('location:fournisseur/');
+      exit;
+    }
     else{
       header('location:index.php?error=1');
     } 

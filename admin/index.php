@@ -8,6 +8,7 @@ $servCategorie = new CategoriesService();
 $countCategorie=$servCategorie->coutCategorie();
 $servArticle =new ArticleService();
 $countArticle=$servArticle->coutArticle();
+$countFournis=$compser->coutFournisseur();
 
 $cotchar=$servCategorie->NombreCategorieParPersonne();
 
@@ -38,13 +39,13 @@ $cotchar=$servCategorie->NombreCategorieParPersonne();
           <div class="small-box bg-yellow">
             <div class="inner">
               <h3> <?php echo $count; ?></h3>
-              <p>Employees</p>
+              <p>Chef</p>
              
             </div>
             <div class="icon">
               <i class="ion ion-person-add"></i>
             </div>
-            <a href="Employe.php" class="small-box-footer">Détails <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="#" class="small-box-footer">Détails <i class="fa fa-arrow-circle-right"></i></a>
           </div>
           
         </div>
@@ -62,6 +63,20 @@ $cotchar=$servCategorie->NombreCategorieParPersonne();
               <i class="ion ion-pie-graph"></i>
             </div>
             <a href="categories.php" class="small-box-footer">Détails <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-green">
+            <div class="inner">
+              <h3><?php  echo $countFournis;?></h3>
+
+              <p>Fournisseur</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-stats-bars"></i>
+            </div>
+            <a href="#" class="small-box-footer">Détails<i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
       </div>

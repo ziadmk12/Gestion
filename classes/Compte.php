@@ -7,15 +7,23 @@ class Compte{
     private $motPass;
     private $personne_id;
     private $grade;
+    private $specialite;
     
-    function __construct($login,$motPass,$personne_id,$grade){
+    function __construct($login,$motPass,$personne_id,$grade,$specialite){
         
         
         $this->login = $login;
         $this->motPass = $motPass;
         $this->personne_id=$personne_id;
         $this->grade=$grade;
+        $this->specialite=$specialite;
 
+    }
+    function getSpecialite() {
+        return $this->specialite;
+    }
+    function setSpecialite($specialite) {
+        $this->specialite = $specialite;
     }
     function getGrade() {
         return $this->grade;

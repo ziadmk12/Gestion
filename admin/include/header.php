@@ -129,13 +129,13 @@ if(isset($_SESSION['idPersone'])){
        
         <li class="treeview">
           <a href="">
-            <i class="fa fa-user"></i> <span>Gestion Chef</span>
+            <i class="fa fa-user"></i> <span>Gestion Employees</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">     
-          <li><a href="Employe.php"><i class="fa fa-circle-o"></i> Chef</a></li>       
+          <li><a href="Employe.php"><i class="fa fa-circle-o"></i> Employees</a></li>       
             <li><a href="Ajouter_Employe.php"><i class="fa fa-circle-o"></i> Ajouter</a></li>
           </ul>
         </li>

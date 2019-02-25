@@ -26,7 +26,9 @@ $com=$compteservice->findEmploye();
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <table id="example1" class="table table-bordered table-striped">
+
+            <div style="overflow-x:auto">
+            <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
                   <th>#</th>
@@ -36,7 +38,8 @@ $com=$compteservice->findEmploye();
                   <th>adress</th>
                   <th>Telephone</th>
                   <th>email</th>
-                  <th></th>
+                  <th>Grade</th>
+                  <th>Spécialiste</th>
                   <th></th>
                   
 
@@ -56,6 +59,8 @@ $com=$compteservice->findEmploye();
                   <td style="line-height: 3;"><?php echo $value->adress; ?></td>
                   <td style="line-height: 3;"><?php echo $value->tel; ?></td>
                   <td style="line-height: 3;"><?php echo $value->email; ?></td>
+                  <td style="line-height: 3;"><?php echo $value->grade; ?></td>
+                  <td style="line-height: 3;"><?php echo $value->snom; ?></td>
                   <td  data-id="<?php echo $value->id ; ?>"><button class="btn btn-danger">Supprimer</button></td>
                   <td><button class="btn btn-success"><a style="color: #ecf0f6;" href="update_employe.php?id=<?php echo $value->id ; ?>">Modifier</a></button></td>
                   
@@ -72,6 +77,9 @@ $com=$compteservice->findEmploye();
                 </tbody>
                 
               </table>
+            </div>
+
+              
             </div>
             <!-- /.box-body -->
           </div>

@@ -17,6 +17,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $email=$_POST['email'];
     $telefone=$_POST['tele'];
     $id_c=$_POST['id_c'];
+    $specialite=$_POST['specialite'];
     $image=$_FILES['image']['name'];
     if(empty($_FILES['image']['name'])){
         $image=$_POST['old_image'];
@@ -40,12 +41,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $person->setId($id);
     $persoserve=new PersonneService();
     $persoserve->updatePersonne($person);
-    $compte=new Compte($email,$pass,null,'chef');
+    $compte=new Compte($email,$pass,null,null,$specialite);
     $compte->setId($id_c);
     $comservice=new CompteService();
     $comservice->updateCompte($compte);
     
-
+   
 
    
 
@@ -53,6 +54,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     header('Content-type: application/json');
 
 
-    echo json_encode("");
+    echo json_encode($compte->getSpecialite());
 
 }

@@ -3,6 +3,8 @@
 if(isset($_GET['id'])){
     $com=new CompteService();
     $compte=$com->findById($_GET['id']);
+    $servSpercialiste = new SpecialisteService();
+$find=$servSpercialiste->findAllSpecial();
 }
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
     
@@ -84,6 +86,29 @@ if(isset($_GET['id'])){
 
                 </div>
               </div>
+             
+
+              <div class="col-md-4">
+              <div class="form-group">
+                  <label >Spécialité</label>
+                  <select class="form-control" name="specialite">
+                  <?php foreach ($find as $value) { ?>
+               
+                  <option  <?php echo ($compte->snom == $value->nom) ? 'selected' : ''; ?> value="<?php echo $value->id?>"> <?php echo $value->nom; ?> </option>
+                  <?php } ?>
+                  </select>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+              <div class="form-group">
+                  <label >Grade</label>
+                  <select class="form-control" name="grade">
+                  <option value="chef" <?php echo ($compte->grade == 'chef') ? 'selected' : ''; ?>>Chef</option>
+                  <option value="fournisseur" <?php echo ($compte->grade == 'fournisseur') ? 'selected' : ''; ?>>Fournisseur</option>
+                  </select>
+                </div>
+              </div>
               
               </div>
               <div class="box-footer">
@@ -118,7 +143,7 @@ data : new FormData(this),
 success : function (data) {
 
 
-
+console.log(data);
 swal("Employé a été Modifier avec succès",'', "success");    
 
 },
