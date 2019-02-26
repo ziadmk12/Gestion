@@ -7,8 +7,7 @@ $find=$artService->findAllByPers($_SESSION['idPersone']);
 
 $servcompte=new CompteService();
 $find1=$servcompte->findSpercialiteOfId($_SESSION['idPersone']);
-$servcompte2=new CompteService();
-$fourniseur=$servcompte2->findSomeSpercialite($find1);
+$fourniseur=$servcompte->findSomeSpercialite($find1->nom);
 
 ?>
 <section class="content">
