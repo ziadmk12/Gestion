@@ -104,13 +104,29 @@ class CompteService
         $sql = "SELECT compte.*,personne.*,specialiste.nom as 'snom' FROM compte
         INNER JOIN personne ON personne.id=compte.personne_id
         INNER JOIN specialiste ON compte.specialiste=specialiste.id
-        WHERE compte.grade ='fournisseur'";
+        WHERE compte.grade ='fournisseur' ";
         $stmt = $this->conn->getConn()->prepare($sql);
         $stmt->execute([]);
 
         return $stmt->fetchAll();
     }
+    public function findSpercialiteOfId($id) {
 
+        $sql = "SELECT specialiste.nom FROM compte INNER JOIN specialiste on specialiste.id=compte.specialiste WHERE compte.personne_id=:id";
+        $stmt = $this->conn->getConn()->prepare($sql);
+        $stmt->execute(['id'=>$id]);
+
+        return $stmt->fetch();
+    }
+    
+    public function findSomeSpercialite($Name) {
+
+        $sql = "SELECT personne.nom,personne.prenom FROM compte INNER JOIN specialiste on specialiste.id=compte.specialiste INNER JOIN personne on personne.id=compte.personne_id WHERE compte.grade='fournisseur' AND specialiste.nom=:nom";
+        $stmt = $this->conn->getConn()->prepare($sql);
+        $stmt->execute(['nom'=>$Name]);
+        return $stmt->fetchAll();
+    }
+    
 
     
 }

@@ -70,7 +70,6 @@ class PersonneService
 
 
         ));
-
     }
     public function findAll() {
 
