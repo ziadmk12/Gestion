@@ -43,7 +43,7 @@ $fourniseur=$servcompte->findSomeSpercialite($find1->nom);
                   <label for="exampleInputEmail1">Fourniseur</label>
                   <select required  class="form-control" name="fourni" id="fourni">
                   <?php foreach($fourniseur as $value1){ ?>
-                  <option value="<?php //echo $fourni->id ?>"><?php echo $value1->nom." ".$value1->pernom ?>
+                  <option value="<?php echo $fourni->id ?>"><?php echo $value1->nom." ".$value1->prenom; ?>
                   </option>
                   <?php } ?>
                   </select>
