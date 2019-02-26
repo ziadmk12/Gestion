@@ -130,7 +130,7 @@ if(isset($_SESSION['idPersone'])){
       <ul class="sidebar-menu" data-widget="tree">        
        
         <li class="treeview">
-          <a href="#">
+          <a href="">
             <i class="fa fa-user"></i> <span>Gestion categories</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -138,9 +138,7 @@ if(isset($_SESSION['idPersone'])){
           </a>
           <ul class="treeview-menu">     
           <li><a href="categories.php"><i class="fa fa-circle-o"></i> categories</a></li>       
-            <li><a href="Ajouter_Categories.php"><i class="fa fa-circle-o"></i> Ajouter</a></li>
-            
-           
+            <li><a href="Ajouter_Categories.php"><i class="fa fa-circle-o"></i> Ajouter</a></li> 
           </ul>
         </li>
         
@@ -150,7 +148,7 @@ if(isset($_SESSION['idPersone'])){
       <ul class="sidebar-menu" data-widget="tree">        
        
        <li class="treeview">
-         <a href="#">
+         <a href="">
            <i class="fa fa-user"></i> <span>Gestion Article</span>
            <span class="pull-right-container">
              <i class="fa fa-angle-left pull-right"></i>
@@ -158,11 +156,23 @@ if(isset($_SESSION['idPersone'])){
          </a>
          <ul class="treeview-menu">     
          <li><a href="Article.php"><i class="fa fa-circle-o"></i> Article</a></li>       
-           <li><a href="Ajouter_Articl.php"><i class="fa fa-circle-o"></i> Ajouter Article</a></li>
-           
-          
+           <li><a href="Ajouter_Articl.php"><i class="fa fa-circle-o"></i> Ajouter Article</a></li>      
          </ul>
        </li>
+
+
+       <li class="treeview">
+          <a href="">
+            <i class="fa fa-user"></i> <span>Gestion Commande</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">     
+          <li><a href="#"><i class="fa fa-circle-o"></i> Commande</a></li>       
+            <li><a href="#"><i class="fa fa-circle-o"></i> Affecter</a></li> 
+          </ul>
+        </li>
        
        
        

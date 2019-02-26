@@ -12,6 +12,8 @@ $countFournis=$compser->coutFournisseur();
 
 $cotchar=$servCategorie->NombreCategorieParPersonne();
 
+$cotcharArticle=$servArticle->NombreCArticleParPersonne();
+
 
 ?>
   
@@ -79,17 +81,52 @@ $cotchar=$servCategorie->NombreCategorieParPersonne();
             <a href="fournisseur.php" class="small-box-footer">Détails<i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
-      </div>
+      </div> 
 
-      
-    
-      <!-- /.row -->
+     
+         
 
-      <div class="container" ">
-            <canvas id="myChart"></canvas>
-          </div>
-    
+         <!-- BAR CHART -->
+         
+         <!-- /.box -->
+
+        
+
+
+         <div class="row">
+        <div class="col-md-6">
+        <div class="box box-success">
+           <div class="box-header with-border">
+             <h3 class="box-title">Nombre Catégories Par Employé</h3>
+           </div>
+           <div class="box-body">
+             <div class="chart">
+               <canvas id="barChart" style="height:230px"></canvas>
+             </div>
+           </div>
+           <!-- /.box-body -->
+         </div>
+        </div>
+        <div class="col-md-6">
+        <div class="box box-success">
+           <div class="box-header with-border">
+             <h3 class="box-title">Nombre Articles Par Employé</h3>
+           </div>
+           <div class="box-body">
+             <div class="chart">
+               <canvas id="barChart1" style="height:230px"></canvas>
+             </div>
+           </div>
+           <!-- /.box-body -->
+         </div>
+        </div>
+        </div>
+         
+
+   
     </section>
+
+ 
 
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     
@@ -97,7 +134,9 @@ $cotchar=$servCategorie->NombreCategorieParPersonne();
 <script>
 
 $(document).ready(function(){
-  /*var tempArray = <?php //echo json_encode($cotchar); ?>;
+
+
+var tempArray = <?php echo json_encode($cotchar); ?>;
 
 
 var nbre = tempArray.map(function (current) {
@@ -107,7 +146,90 @@ var nbre = tempArray.map(function (current) {
 var nom = tempArray.map(function (current) {
   return current.nom;
 });
-*/
+
+
+var tempArray1 = <?php echo json_encode($cotcharArticle); ?>;
+
+
+var nbre1 = tempArray1.map(function (current) {
+  return current.nbr;
+});
+
+var nom1 = tempArray.map(function (current) {
+  return current.nom;
+});
+
+
+
+$(function () {
+
+var areaChartData = {
+  labels  : nom,
+  datasets: [
+    {
+      label               : 'Electronics',
+      fillColor           : '#428bc1cf',
+      strokeColor         : 'rgba(210, 214, 222, 1)',
+      pointColor          : 'rgba(210, 214, 222, 1)',
+      pointStrokeColor    : '#c1c7d1',
+      pointHighlightFill  : '#fff',
+      pointHighlightStroke: 'rgba(220,220,220,1)',
+      data                : nbre,
+      
+    }
+  ]
+}
+
+//-------------
+//- BAR CHART -
+//-------------
+var barChartCanvas                   = $('#barChart').get(0).getContext('2d')
+var barChart                         = new Chart(barChartCanvas)
+var barChartData                     = areaChartData
+var barChartOptions                  = {
+  scaleGridLineColor      : 'white',
+  responsive              : true,
+}
+
+barChartOptions.datasetFill = false
+barChart.Bar(barChartData, barChartOptions)
+})
+
+
+
+$(function () {
+
+var areaChartData1 = {
+  labels  : nom1,
+  datasets: [
+    {
+      label               : 'Electronics',
+      fillColor           : '#428bc1cf',
+      strokeColor         : 'rgba(210, 214, 222, 1)',
+      pointColor          : 'rgba(210, 214, 222, 1)',
+      pointStrokeColor    : '#c1c7d1',
+      pointHighlightFill  : '#fff',
+      pointHighlightStroke: 'rgba(220,220,220,1)',
+      data                : nbre1,
+      
+    }
+  ]
+}
+
+//-------------
+//- BAR CHART -
+//-------------
+var barChartCanvas1                   = $('#barChart1').get(0).getContext('2d')
+var barChart1                      = new Chart(barChartCanvas1)
+var barChartData1                    = areaChartData1
+var barChartOptions1                  = {
+  scaleGridLineColor      : 'white',
+  responsive              : true,
+}
+
+barChartOptions1.datasetFill = false
+barChart1.Bar(barChartData1, barChartOptions1)
+})
 
 
 });

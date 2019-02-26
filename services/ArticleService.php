@@ -101,6 +101,16 @@ public function AllArticle() {
     return $stmt->fetchAll();
 }
 
+public function NombreCArticleParPersonne() {
+
+    $sql = "SELECT personne.nom,COUNT(*) as 'nbr' FROM article INNER JOIN personne on personne.id=article.Pers_id GROUP BY personne.nom";
+    $stmt = $this->conn->getConn()->prepare($sql);
+    $stmt->execute([]);
+
+    return $stmt->fetchAll();
+}
+
+
 
 
 

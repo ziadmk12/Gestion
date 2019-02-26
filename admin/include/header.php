@@ -45,6 +45,15 @@ if(isset($_SESSION['idPersone'])){
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
   <link rel="stylesheet" href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+
+<!-- ChartJS -->
+<script src="bower_components/chart.js/Chart.js"></script>
+<!-- FastClick -->
+
+<!-- AdminLTE App -->
+
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -174,8 +183,8 @@ if(isset($_SESSION['idPersone'])){
             </span>
           </a>
           <ul class="treeview-menu">     
-          <li><a href="RechercheBetweenDate.php"><i class="fa fa-circle-o"></i>Entre deux dates</a></li>       
-            <li><a href="#"><i class="fa fa-circle-o"></i> x</a></li>
+          <li><a href="RechercheBetweenDate.php"><i class="fa fa-circle-o"></i>Catégories Entre deux dates</a></li>       
+            <li><a href="#"><i class="fa fa-circle-o"></i>Articles Entre deux dates</a></li>
           </ul>
         </li>
         <li class="treeview">
