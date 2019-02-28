@@ -8,7 +8,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
     $code=$_POST['code'];
     $id_article=$_POST['id'];
     $stock=$_POST['stock'];
-    $dateadd=$_POST['dateadd'];
+    //$dateadd=$_POST['dateadd'];
     $pers_id=$_SESSION["idPersone"];
     $cat_id=$_POST['cat_id'];
     $image=$_FILES['image']['name'];
@@ -23,7 +23,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
         }
     } 
 
-    $article=new article($nom,$code,$stock,$dateadd,$pers_id,$cat_id,$image);
+    $article=new article($nom,$code,$stock,Date("Y-m-d"),$pers_id,$cat_id,$image);
     $article->setarticle_ID($id_article);
     $servArticl=new ArticleService();
     $servArticl->updateArticle($article);

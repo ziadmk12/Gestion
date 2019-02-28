@@ -121,7 +121,7 @@ class CompteService
     
     public function findSomeSpercialite($Name) {
 
-        $sql = "SELECT personne.nom,personne.prenom FROM compte INNER JOIN specialiste on specialiste.id=compte.specialiste INNER JOIN personne on personne.id=compte.personne_id WHERE compte.grade='fournisseur' AND specialiste.nom=:nom";
+        $sql = "SELECT  personne.id,personne.nom,personne.prenom FROM compte INNER JOIN specialiste on specialiste.id=compte.specialiste INNER JOIN personne on personne.id=compte.personne_id WHERE compte.grade='fournisseur' AND specialiste.nom=:nom";
         $stmt = $this->conn->getConn()->prepare($sql);
         $stmt->execute(['nom'=>$Name]);
         return $stmt->fetchAll();

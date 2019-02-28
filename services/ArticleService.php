@@ -109,7 +109,18 @@ public function NombreCArticleParPersonne() {
 
     return $stmt->fetchAll();
 }
+public function findArticleBetweendates($date1,$date2) {
 
+    $sql = "SELECT article.*,personne.nom,personne.prenom FROM article 
+    inner JOIN personne ON personne.id=article.Pers_id WHERE article.DateAddArt BETWEEN :date1 AND :date2";
+    $stmt = $this->conn->getConn()->prepare($sql);
+    $stmt->execute([
+        'date1'=>$date1,
+        'date2'=>$date2
+        ]);
+
+    return $stmt->fetchAll();
+}
 
 
 

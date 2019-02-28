@@ -184,7 +184,7 @@ if(isset($_SESSION['idPersone'])){
           </a>
           <ul class="treeview-menu">     
           <li><a href="RechercheBetweenDate.php"><i class="fa fa-circle-o"></i>Catégories Entre deux dates</a></li>       
-            <li><a href="#"><i class="fa fa-circle-o"></i>Articles Entre deux dates</a></li>
+            <li><a href="RechercheArticleBetweenDate.php"><i class="fa fa-circle-o"></i>Articles Entre deux dates</a></li>
           </ul>
         </li>
         <li class="treeview">

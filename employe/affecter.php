@@ -27,7 +27,7 @@ $fourniseur=$servcompte->findSomeSpercialite($find1->nom);
               <div class="box-body">
               <div class="row">
               
-              <div class="col-md-4">
+              <div class="col-md-6">
               <div class="form-group">
                   <label for="exampleInputEmail1">Article</label>
                   <select required  class="form-control" name="article" id="article">
@@ -38,35 +38,25 @@ $fourniseur=$servcompte->findSomeSpercialite($find1->nom);
                   </select>
                 </div>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-6">
               <div class="form-group">
                   <label for="exampleInputEmail1">Fourniseur</label>
                   <select required  class="form-control" name="fourni" id="fourni">
                   <?php foreach($fourniseur as $value1){ ?>
-                  <option value="<?php echo $fourni->id ?>"><?php echo $value1->nom." ".$value1->prenom; ?>
+                  <option value="<?php echo $value1->id ?>"><?php echo $value1->nom." ".$value1->prenom; ?>
                   </option>
                   <?php } ?>
                   </select>
                 </div>
               </div>
-              <div class="col-md-4">
-              <div class="form-group">
-                  <label for="exampleInputEmail1">Date add</label>
-                  <input name="dateadd" id="dateadd" type="date" class="form-control"  >
-                </div>
-              </div>
-              
+
               </div>
               <div class="box-footer">
                 <button type="submit" id="ajouter" class="btn btn-primary">Affecter</button>
               </div>
               </div>
               
-                
-             
-              <!-- /.box-body -->
 
-              
             </form>
             
           </div>
@@ -74,6 +64,44 @@ $fourniseur=$servcompte->findSomeSpercialite($find1->nom);
         </div>       
       </div>
     </section>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+
+      $('#fupForm').on('submit',function(e){ 
+      e.preventDefault();
+      $.ajax({
+
+url : 'http://localhost:8888/Gestion/employe/api/affecterCommande.php',
+type : 'POST',
+contentType: false,
+cache: false,
+processData:false,
+data : new FormData(this),
+success : function (data) {
+
+$('#article').val('');
+$('#fourni').val(''); 
+
+
+
+
+
+swal("Commande a été ajouter avec succès",'', "success");    
+
+
+},
+error : function(error){
+    console.log(error);
+}
+
+});
+    });
+
+    });
+    
+    
+    </script>
 
 
 
