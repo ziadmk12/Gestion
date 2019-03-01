@@ -47,12 +47,7 @@ if(isset($_GET['id'])){
                 <input value="<?php echo $Article->Stock  ?>" name="stock" id="stock" type="text" class="form-control" >
               </div>
             </div>
-            <div class="col-md-6">
-            <div class="form-group">
-                <label for="exampleInputEmail1">Date add</label>
-                <input value="<?php echo $Article->DateAddArt  ?>"  name="dateadd" id="dateadd" type="date" class="form-control"  >
-              </div>
-            </div>
+            
             
             <div class="col-md-6">
             <div class="form-group">

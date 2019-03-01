@@ -169,7 +169,7 @@ if(isset($_SESSION['idPersone'])){
             </span>
           </a>
           <ul class="treeview-menu">     
-          <li><a href="#"><i class="fa fa-circle-o"></i> Commande</a></li>       
+          <li><a href="commande.php"><i class="fa fa-circle-o"></i> Commande</a></li>       
             <li><a href="affecter.php"><i class="fa fa-circle-o"></i> Affecter</a></li> 
           </ul>
         </li>

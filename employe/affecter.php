@@ -31,6 +31,7 @@ $fourniseur=$servcompte->findSomeSpercialite($find1->nom);
               <div class="form-group">
                   <label for="exampleInputEmail1">Article</label>
                   <select required  class="form-control" name="article" id="article">
+                  <option hidden>Selecter article</option>
                   <?php foreach($find as $value){ ?>
                   <option value="<?php echo $value->Article_ID ?>"><?php echo $value->Article_Name ?>
                   </option>
@@ -42,6 +43,7 @@ $fourniseur=$servcompte->findSomeSpercialite($find1->nom);
               <div class="form-group">
                   <label for="exampleInputEmail1">Fourniseur</label>
                   <select required  class="form-control" name="fourni" id="fourni">
+                  <option hidden>Selecter furniseur</option>
                   <?php foreach($fourniseur as $value1){ ?>
                   <option value="<?php echo $value1->id ?>"><?php echo $value1->nom." ".$value1->prenom; ?>
                   </option>

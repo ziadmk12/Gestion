@@ -63,9 +63,9 @@ public function updateArticle($obj) {
         'DateAddArt'=>$obj->getdateAddArt(),
         'Pers_id'=>$obj->getper_id(),
         'id_cat'=>$obj->getid_cat(),
-        'Article_ID'=>$obj->getarticle_ID(),
-        'image'=>$obj->getimage()
-
+        'image'=>$obj->getimage(),
+        'Article_ID'=>$obj->getarticle_ID()
+        
     ));
 
 }
