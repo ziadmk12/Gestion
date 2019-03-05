@@ -62,21 +62,39 @@ class CommandeService
 
         return $stmt->fetch();
     }
+
+    public function findAllCommand() {
+
+        $sql = "SELECT commande.*,personne.prenom,personne.nom,article.Article_Name FROM commande
+        inner JOIN personne ON personne.id=commande.id_fourniseur
+        INNER JOIN article on article.Article_ID=commande.id_article ";
+        $stmt = $this->conn->getConn()->prepare($sql);
+        $stmt->execute([]);
+
+        return $stmt->fetchAll();
+    }
+    public function findCommandEtatEncours() {
+
+        $sql = "SELECT commande.*,personne.prenom,personne.nom,article.Article_Name FROM commande
+        inner JOIN personne ON personne.id=commande.id_fourniseur
+        INNER JOIN article on article.Article_ID=commande.id_article WHERE commande.etat=0 ";
+        $stmt = $this->conn->getConn()->prepare($sql);
+        $stmt->execute([]);
+
+        return $stmt->fetchAll();
+    }
+
+    public function updateEtatCommande($obj) {
+
+        $sql = "UPDATE commande SET dateadd=:dateadd,etat=:etat WHERE id=:id";
+        $stmt = $this->conn->getConn()->prepare($sql);
+        $stmt->execute(array(
+
+            'dateadd'=>$obj->getDateadd(),
+            'etat' => $obj->getEtat(),
+            'id'=>$obj->getid()
+        
+        ));
    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 }

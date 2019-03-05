@@ -172,6 +172,7 @@ if(isset($_SESSION['idPersone'])){
           <ul class="treeview-menu">     
           <li><a href="categories.php"><i class="fa fa-circle-o"></i> Categories</a></li>       
             <li><a href="article.php"><i class="fa fa-circle-o"></i> Article</a></li>
+            <li><a href="commande.php"><i class="fa fa-circle-o"></i> Commande</a></li>
           </ul>
         </li>
         

@@ -119,6 +119,31 @@ if(isset($_SESSION['idPersone'])){
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
+      <ul class="sidebar-menu" data-widget="tree">        
+       
+        
+
+        <li class="treeview">
+          <a href="">
+            <i class="fa fa-user"></i> <span>Gestion Commande</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">     
+          <li><a href="Commande.php"><i class="fa fa-circle-o"></i> Commande</a></li>       
+            <li><a href="Valide_commande.php"><i class="fa fa-circle-o"></i> Faire une Commande</a></li>
+          </ul>
+        </li>
+
+        
+        
+        
+        
+        
+        
+        
+      </ul>
       
       <!-- sidebar menu: : style can be found in sidebar.less -->
      

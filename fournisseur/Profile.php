@@ -44,49 +44,7 @@ $NameArt=$servArticl->findAllByPers($_SESSION["idPersone"]);
               <h3 class="box-title">Mon Realisation</h3>
             </div>
             <!-- /.box-header -->
-            <div class="box-body">
-              
-
-           
-
-              <strong><i class="fa fa-pencil margin-r-5"></i> Categories</strong>
-              
-
-              <p>
-              <?php
-              foreach ($NameC as  $Name) {
-                ?>
-
-                <span class="label label-success"><?php echo $Name->cat_name; ?></span>
-              
-
-                <?php
-              }
-              ?>
-              
-                
-              </p>
-              <strong><i class="fa fa-pencil margin-r-5"></i> Article</strong>
-
-              <p>
-              <?php
-              foreach ($NameArt as  $Name) {
-                ?>
-
-                <span class="label label-danger"><?php echo $Name->Article_Name; ?></span>
-              
-
-                <?php
-              }
-              ?>
-              
-                
-              </p>
-             
-
             
-
-            </div>
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
@@ -184,7 +142,7 @@ $NameArt=$servArticl->findAllByPers($_SESSION["idPersone"]);
       e.preventDefault();
       $.ajax({
 
-url : 'http://localhost:8888/Gestion/employe/api/update_profile.php',
+url : 'http://localhost:8888/Gestion/fournisseur/api/update_profile.php',
 type : 'POST',
 contentType: false,
 cache: false,
